@@ -230,6 +230,18 @@
 
         </PreferenceCategory>
     -->
+    <PreferenceCategory android:title="Miscellaneous">
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/MethodBattery"
+            android:entryValues="@array/MethodBatteryValue"
+            android:defaultValue="batteryDefault"
+            android:summary="For Onewheels with modified batteries, non-default options are guesses and may fluctuate or be inaccurate."
+            android:positiveButtonText="%s"
+            android:key="batteryMethod"
+            android:title="Battery % Guestimation" />
+    </PreferenceCategory>
     <PreferenceCategory android:title="Open Source Attributes">
 
         <Preference

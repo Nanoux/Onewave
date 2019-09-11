@@ -16,6 +16,7 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.nanowheel.nanoux.nanowheel.DeviceInterface;
+import com.nanowheel.nanoux.nanowheel.util.Battery;
 import com.nanowheel.nanoux.nanowheel.util.BluetoothService;
 import com.nanowheel.nanoux.nanowheel.util.BluetoothUtil;
 import com.nanowheel.nanoux.nanowheel.util.NotificationBuilder;
@@ -151,6 +152,8 @@ public class OWDevice extends BaseObservable implements DeviceInterface {
 
     private double[] ampCells = new double[16];
     private double[] batteryVoltageCells = new double[16];
+
+    private boolean updateBatteryChanges = true;
 
 
 
@@ -492,7 +495,9 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         if(dev_uuid != null && dev_uuid.equals(incomingUuid)) {
             switch(dev_uuid) {
                 case OnewheelCharacteristicHardwareRevision:
-                    dc.value.set(Integer.toString(Util.unsignedShort(incomingValue)));
+                    int hver = Util.unsignedShort(incomingValue);
+                    dc.value.set(Integer.toString(hver));
+                    Battery.setHardware(hver);
                     break;
                 case OnewheelCharacteristicFirmwareRevision:
                     dc.value.set(Integer.toString(Util.unsignedShort(incomingValue)));
@@ -588,70 +593,24 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
 
     }
 
-    private ArrayList<Double> voltageHistory;
-    private static boolean isLooping = false;
     private void processBatteryVoltage(byte[] incomingValue, DeviceCharacteristic dc) {
         //double d_value = Double.valueOf((double) c.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 1) / 10.0D);
-        int recordSize = 10;//CHANGE THIS
         int d_volts = Util.unsignedShort(incomingValue);
         double d_value = ((double) d_volts / 10.0D);
+
         dc.value.set(Double.toString(d_value));
-        if (SharedPreferencesUtil.getPrefs(context).getIsTwoX()){
-            if (voltageHistory == null){
-                voltageHistory = new ArrayList<>();
-            }
-            voltageHistory.add(d_value);
-            while (voltageHistory.size() > recordSize){
-                voltageHistory.remove(0);
-            }
-            if (!isLooping){
-                isLooping = true;
-                updateTwoXEst();
-                final int repeatTime = 30000;//update every 30 seconds
-                final Handler handler = new Handler();
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        if(BluetoothService.isExist && SharedPreferencesUtil.getPrefs(context).getStatusMode() == 2 && SharedPreferencesUtil.getPrefs(context).getIsTwoX()) {
-                            updateTwoXEst();
-                            handler.postDelayed(this, repeatTime);
-                        }else{
-                            isLooping = false;
-                        }
-                    }
-                }, repeatTime);
-            }
-        }
-    }
+        updateBatteryChanges |= Battery.setVoltage(d_value);
 
-    private void updateTwoXEst(){
-        double sum = 0;
-        for (int i = 0; i < voltageHistory.size(); i++){
-            sum += voltageHistory.get(i);
-        }
-        int battery = batFunc(sum/voltageHistory.size());
-        characteristics.get(OnewheelCharacteristicBatteryRemaining).value.set(Integer.toString(battery));
-        if (characteristics.get(MockOnewheelCharacteristicBatteryInitial).value.get() == null) {
-            characteristics.get(MockOnewheelCharacteristicBatteryInitial).value.set("" + battery);
-        }
-    }
-
-    private int batFunc(double voltage){
-        return 42;
+        updateBatteryRemaining();
     }
 
     private void processBatteryRemaining(BluetoothGattCharacteristic incomingCharacteristic, DeviceCharacteristic dc) {
-        if(!SharedPreferencesUtil.getPrefs(context).getIsTwoX()) {
-            int batteryLevel = incomingCharacteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 1);
+        int batteryLevel = incomingCharacteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 1);
 
-            if (characteristics.get(MockOnewheelCharacteristicBatteryInitial).value.get() == null) {
-                characteristics.get(MockOnewheelCharacteristicBatteryInitial).value.set("" + batteryLevel);
-            }
+        //dc.value.set(Integer.toString(batteryLevel));
+        updateBatteryChanges |= Battery.setRemaining(batteryLevel);
 
-            //EventBus.getDefault().post(new DeviceBatteryRemainingEvent(batteryLevel));
-            calcRange(batteryLevel);
-            dc.value.set(Integer.toString(batteryLevel));
-        }
+        updateBatteryRemaining();
     }
 
     private void processPitch(byte[] incomingValue, DeviceCharacteristic dc) {
@@ -875,16 +834,20 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
 
     private void processBatteryCellsVoltage(byte[] incomingValue, DeviceCharacteristic dc) {
         int cellIdentifier = Util.unsignedByte(incomingValue[0]);
+        double volts = 0.0;
+
         if(cellIdentifier < batteryVoltageCells.length && cellIdentifier >= 0) {
             int var3 = Util.unsignedByte(incomingValue[1]);
             batteryVoltageCells[cellIdentifier] = (double)var3 / 50.0D;
         }
         StringBuilder stringBuilder = new StringBuilder();
         for(int i = 0; i < batteryVoltageCells.length; ++i) {
-            if (batteryVoltageCells[i] == 0) {
-                stringBuilder.append("--");
+            if (batteryVoltageCells[i] < 0.1) {
+                stringBuilder.append("----");
             } else {
-                stringBuilder.append(batteryVoltageCells[i]);
+                volts+=batteryVoltageCells[i];
+                stringBuilder.append(String.format(Locale.ENGLISH, "%.02f",
+                    batteryVoltageCells[i]));
             }
 
             if ((i+1) % 4 == 0 && i != batteryVoltageCells.length-1) {
@@ -896,6 +859,9 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         }
         String batteryCellsVoltage = stringBuilder.toString();
         dc.value.set(batteryCellsVoltage);
+        updateBatteryChanges |= Battery.setCells(volts);
+
+        updateBatteryRemaining();
     }
 
     private void processCurrentAmps(byte[] incomingValue, DeviceCharacteristic dc) {
@@ -909,6 +875,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         }
         final float amps = incoming / 1000.0f * multiplier;
         dc.value.set(String.format(Locale.ENGLISH, "%.2f",amps));
+        Battery.setAmps(amps);
     }
 
 
@@ -954,11 +921,40 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         SharedPreferencesUtil.getPrefs(context).setChargeDistRev(0);
     }
 
+    private void updateBatteryRemaining() {
+        if (updateBatteryChanges) {
+            DeviceCharacteristic dc = characteristics.get(OnewheelCharacteristicBatteryRemaining);
+            DeviceCharacteristic mock = characteristics.get(MockOnewheelCharacteristicBatteryInitial);
+            SharedPreferencesUtil prefs = SharedPreferencesUtil.getPrefs(context);
+            int remaining = 0;
+
+            if (prefs.getIsBatteryVoltage()) {
+                remaining = Battery.remainingByVoltage();
+            } else if (prefs.getIsBatteryCells()) {
+                remaining = Battery.remainingFromCells();
+            } else if (prefs.getIsBatteryTwoX()) {
+                remaining = Battery.remainingForTwoX();
+            } else {
+                remaining = Battery.remainingDefault();
+            }
+
+            dc.value.set(Integer.toString(remaining));
+            if (mock.value.get() == null) {
+                mock.value.set(Integer.toString(remaining));
+            }
+
+            calcRange(remaining);
+
+            updateBatteryChanges = false;
+        }
+
+    }
+
     private int battStart = -1;
     private int battStartCalc = -1;
     private float rStart = -1;
     private void calcRange(int battery){
-        if (battStart < 0){
+        if (battery > battStart){
             battStart = battery;
         }
         if (battStart >= 0 && battery < battStart && rStart < 0){

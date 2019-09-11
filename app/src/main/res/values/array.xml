@@ -133,4 +133,18 @@
         <item>95%</item>
     </string-array>
 
+    <string-array name="MethodBattery">
+        <item>Default</item>
+        <item>Output Voltage</item>
+        <item>Cell Voltages</item>
+        <item>Fully Charged Two-X</item>
+    </string-array>
+
+    <string-array name="MethodBatteryValue">
+        <item>batteryDefault</item>
+        <item>batteryVoltage</item>
+        <item>batteryCells</item>
+        <item>batteryTwoX</item>
+    </string-array>
+
 </resources>
