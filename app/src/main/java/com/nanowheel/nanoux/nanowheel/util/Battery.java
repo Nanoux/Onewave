@@ -25,7 +25,7 @@ public class Battery {
     public static int remainingFromCells() {
         double remaining;
 
-        remaining=99.9/(1.0+Math.pow(5, medianVoltage-avgCells))+1;
+        remaining=99.9/(1.0+Math.pow(6, medianVoltage-avgCells))+1;
 
         return((int)remaining);
     }
