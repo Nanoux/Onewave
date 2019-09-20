@@ -154,6 +154,7 @@ public class OWDevice extends BaseObservable implements DeviceInterface {
     private double[] batteryVoltageCells = new double[16];
 
     private boolean updateBatteryChanges = true;
+    private String updateBatteryMethod = "";
 
 
 
@@ -599,9 +600,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         double d_value = ((double) d_volts / 10.0D);
 
         dc.value.set(Double.toString(d_value));
-        updateBatteryChanges |= Battery.setVoltage(d_value);
-
-        updateBatteryRemaining();
+        updateBatteryChanges |= Battery.setOutput(d_value);
     }
 
     private void processBatteryRemaining(BluetoothGattCharacteristic incomingCharacteristic, DeviceCharacteristic dc) {
@@ -609,8 +608,6 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
 
         //dc.value.set(Integer.toString(batteryLevel));
         updateBatteryChanges |= Battery.setRemaining(batteryLevel);
-
-        updateBatteryRemaining();
     }
 
     private void processPitch(byte[] incomingValue, DeviceCharacteristic dc) {
@@ -683,6 +680,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         int i_speedRpm = Util.unsignedShort(incomingValue);
         speedRpm.set(i_speedRpm);
         dc.value.set(Integer.toString(i_speedRpm));
+        updateBatteryChanges |= Battery.setSpeedRpm(i_speedRpm);
         DeviceCharacteristic speedCharacteristic = characteristics.get(MockOnewheelCharacteristicSpeed);
         DeviceCharacteristic maxSpeedCharacteristic = characteristics.get(MockOnewheelCharacteristicMaxSpeed);
         setFormattedSpeedWithMetricPreference(speedCharacteristic, i_speedRpm);
@@ -760,6 +758,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         int i_tripregenamp = Util.unsignedShort(incomingValue);
         double d_tripregenamp = ((double) i_tripregenamp / 50.0D);
         dc.value.set(Double.toString(d_tripregenamp));
+        updateBatteryChanges |= Battery.setRegenAmpHrs(d_tripregenamp);
     }
 
     private void processTripTotalAmpHours(byte[] incomingValue, DeviceCharacteristic dc) {
@@ -772,6 +771,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         int i_amphours = Util.unsignedShort(incomingValue);
         double d_amphours = ((double) i_amphours / 50.0D);
         dc.value.set(Double.toString(d_amphours));
+        updateBatteryChanges |= Battery.setUsedAmpHrs(d_amphours);
     }
 
     private void processRidingMode(byte[] incomingValue, DeviceCharacteristic dc, BluetoothGattCharacteristic incomingCharacteristic) {
@@ -835,6 +835,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
     private void processBatteryCellsVoltage(byte[] incomingValue, DeviceCharacteristic dc) {
         int cellIdentifier = Util.unsignedByte(incomingValue[0]);
         double volts = 0.0;
+	   int count = 0;
 
         if(cellIdentifier < batteryVoltageCells.length && cellIdentifier >= 0) {
             int var3 = Util.unsignedByte(incomingValue[1]);
@@ -845,6 +846,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
             if (batteryVoltageCells[i] < 0.1) {
                 stringBuilder.append("----");
             } else {
+                count++;
                 volts+=batteryVoltageCells[i];
                 stringBuilder.append(String.format(Locale.ENGLISH, "%.02f",
                     batteryVoltageCells[i]));
@@ -859,9 +861,9 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         }
         String batteryCellsVoltage = stringBuilder.toString();
         dc.value.set(batteryCellsVoltage);
-        updateBatteryChanges |= Battery.setCells(volts);
-
-        updateBatteryRemaining();
+        if (count == batteryVoltageCells.length) { //valid on XR and pint?
+            updateBatteryChanges |= Battery.setCells(volts);
+        }
     }
 
     private void processCurrentAmps(byte[] incomingValue, DeviceCharacteristic dc) {
@@ -875,9 +877,43 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         }
         final float amps = incoming / 1000.0f * multiplier;
         dc.value.set(String.format(Locale.ENGLISH, "%.2f",amps));
-        Battery.setAmps(amps);
+        updateBatteryChanges |= Battery.setAmps(amps);
     }
 
+    public void setBatteryRemaining() {
+        SharedPreferencesUtil prefs = SharedPreferencesUtil.getPrefs(context);
+
+        if (! prefs.getBatteryMethod().equals(updateBatteryMethod)) {
+            updateBatteryMethod=prefs.getBatteryMethod();
+            updateBatteryChanges=true;
+        }
+
+        if (updateBatteryChanges) {
+            DeviceCharacteristic dc = characteristics.get(OnewheelCharacteristicBatteryRemaining);
+            DeviceCharacteristic mock = characteristics.get(MockOnewheelCharacteristicBatteryInitial);
+            int remaining = 0;
+
+            if (prefs.getIsBatteryOutput()) {
+                remaining = Battery.getRemainingOutput();
+            } else if (prefs.getIsBatteryCells()) {
+                remaining = Battery.getRemainingCells();
+            } else if (prefs.getIsBatteryTwoX()) {
+                remaining = Battery.getRemainingTwoX();
+            } else {
+                remaining = Battery.getRemainingDefault();
+            }
+
+            dc.value.set(Integer.toString(remaining));
+            if (mock.value.get() == null) {
+                mock.value.set(Integer.toString(remaining));
+            }
+
+            calcRange(remaining);
+
+            updateBatteryChanges = false;
+        }
+
+    }
 
 
     private float lastDist = -1;
@@ -921,34 +957,6 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         SharedPreferencesUtil.getPrefs(context).setChargeDistRev(0);
     }
 
-    private void updateBatteryRemaining() {
-        if (updateBatteryChanges) {
-            DeviceCharacteristic dc = characteristics.get(OnewheelCharacteristicBatteryRemaining);
-            DeviceCharacteristic mock = characteristics.get(MockOnewheelCharacteristicBatteryInitial);
-            SharedPreferencesUtil prefs = SharedPreferencesUtil.getPrefs(context);
-            int remaining = 0;
-
-            if (prefs.getIsBatteryVoltage()) {
-                remaining = Battery.remainingByVoltage();
-            } else if (prefs.getIsBatteryCells()) {
-                remaining = Battery.remainingFromCells();
-            } else if (prefs.getIsBatteryTwoX()) {
-                remaining = Battery.remainingForTwoX();
-            } else {
-                remaining = Battery.remainingDefault();
-            }
-
-            dc.value.set(Integer.toString(remaining));
-            if (mock.value.get() == null) {
-                mock.value.set(Integer.toString(remaining));
-            }
-
-            calcRange(remaining);
-
-            updateBatteryChanges = false;
-        }
-
-    }
 
     private int battStart = -1;
     private int battStartCalc = -1;

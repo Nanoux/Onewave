@@ -43,7 +43,7 @@ public class SharedPreferencesUtil{
     private static final String SPEED_REC_NOT = "notificationSpeed";
     private static final String METHOD_BATTERY = "batteryMethod";
     private static final String DEFAULT_BATTERY = "batteryDefault";
-    private static final String VOLTS_BATTERY = "batteryVoltage";
+    private static final String OUTPUT_BATTERY = "batteryVoltage";
     private static final String CELLS_BATTERY = "batteryCells";
     private static final String TWO_X_BATTERY = "batteryTwoX";
     //private static final String CHALLENGE_EPOCH = "callengeEpoch";
@@ -270,17 +270,20 @@ public class SharedPreferencesUtil{
         putBool(a,PINT_DIALOG_ACCEPTED);
     }
 
-    public boolean getIsBatteryDefault(){
-        return androidSharedPreferences.getString(METHOD_BATTERY, "batteryDefault").equals(DEFAULT_BATTERY);
+    public String getBatteryMethod(){
+        return androidSharedPreferences.getString(METHOD_BATTERY, DEFAULT_BATTERY);
     }
-    public boolean getIsBatteryVoltage(){
-        return androidSharedPreferences.getString(METHOD_BATTERY, "batteryDefault").equals(VOLTS_BATTERY);
+    public boolean getIsBatteryDefault(){
+        return androidSharedPreferences.getString(METHOD_BATTERY, DEFAULT_BATTERY).equals(DEFAULT_BATTERY);
+    }
+    public boolean getIsBatteryOutput(){
+        return androidSharedPreferences.getString(METHOD_BATTERY, DEFAULT_BATTERY).equals(OUTPUT_BATTERY);
     }
     public boolean getIsBatteryCells(){
-        return androidSharedPreferences.getString(METHOD_BATTERY, "batteryDefault").equals(CELLS_BATTERY);
+        return androidSharedPreferences.getString(METHOD_BATTERY, DEFAULT_BATTERY).equals(CELLS_BATTERY);
     }
     public boolean getIsBatteryTwoX(){
-        return androidSharedPreferences.getString(METHOD_BATTERY, "batteryDefault").equals(TWO_X_BATTERY);
+        return androidSharedPreferences.getString(METHOD_BATTERY, DEFAULT_BATTERY).equals(TWO_X_BATTERY);
     }
 
     public int getLastUpdateDay(){ return androidSharedPreferences.getInt(LAST_UPDATE_DAY,-1);}

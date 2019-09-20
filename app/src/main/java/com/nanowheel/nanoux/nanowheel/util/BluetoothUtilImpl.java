@@ -182,6 +182,7 @@ public class BluetoothUtilImpl implements BluetoothUtil{
 
             mOWDevice.processUUID(c);
 
+            mOWDevice.setBatteryRemaining();
 
             // Callback to make sure the queue is drained
             if (characteristicReadQueue.size() > 0) {
@@ -267,6 +268,8 @@ public class BluetoothUtilImpl implements BluetoothUtil{
             }
 
             mOWDevice.processUUID(c);
+
+            mOWDevice.setBatteryRemaining();
 
             if (mOWDevice.characteristics.get(c.getUuid().toString()).state == 5){
                 Log.w("TESTING","HUZZAH! CHANGED");
