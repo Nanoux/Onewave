@@ -343,10 +343,14 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         //Notification Characteristics when the diagnotics page is open
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTiltAnglePitch, KEY_TILT_ANGLE_PITCH,   "Pitch",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTiltAngleRoll, KEY_TILT_ANGLE_ROLL,   "Roll",0));
+
+        //Additional Characteristics needed to track battery usage
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicCurrentAmps, KEY_CURRENT_AMPS,   "Current Amps",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryCells, KEY_BATTERY_CELLS,   "Battery Cell Voltages",0));
-        deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicUNKNOWN2, KEY_CUSTOM_SHAPING,   "Custom Shaping Bullshit",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryVoltage, KEY_BATTERY_VOLTAGE,   "Battery Voltage",0));
+        deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperature",0));
+        deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTripTotalAmpHours, KEY_TRIP_AMPS,   "Trip Amp Hours",0));
+        deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTripRegenAmpHours, KEY_TRIP_AMPS_REGEN,   "Trip Amp Hours Regen",0));
 
         //state 1 is for things to sub and unsub from dynamically, not implemented anymore
 
@@ -373,10 +377,8 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
 
         //Read these for the diagnotics page
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTemperature, KEY_CONTROLLER_TEMP,   "Controller Temp",4));
-        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperature",4));
-        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTripTotalAmpHours, KEY_TRIP_AMPS,   "Trip Amp Hours",4));
-        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTripRegenAmpHours, KEY_TRIP_AMPS_REGEN,   "Trip Amp Hours Regen",4));
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicLifetimeAmpHours, KEY_AMP_HOURS_LIFE,   "Lifetime Amp Hours",4));
+        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicUNKNOWN2, KEY_CUSTOM_SHAPING,   "Custom Shaping Bullshit",4));
 
         characteristics.clear();
         for (DeviceCharacteristic deviceNotifyCharacteristic : deviceNotifyCharacteristics) {
@@ -717,11 +719,12 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
     }
 
     private void processBatteryTemp(BluetoothGattCharacteristic incomingCharacteristic, DeviceCharacteristic dc) {
-        int batteryTemp = incomingCharacteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 1);
+        int batteryTemp = incomingCharacteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
 
         //Timber.d("batteryTemp = " + batteryTemp);
 
         setFormattedTempWithMetricPreference(dc, batteryTemp);
+        updateBatteryChanges |= Battery.setBatteryTemp(batteryTemp);
     }
 
     private void processCustomRidemode(BluetoothGattCharacteristic incomingCharacteristic, DeviceCharacteristic dc){
@@ -861,7 +864,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         }
         String batteryCellsVoltage = stringBuilder.toString();
         dc.value.set(batteryCellsVoltage);
-        if (count == batteryVoltageCells.length) { //valid on XR and pint?
+        if (Battery.checkCells(count)) {
             updateBatteryChanges |= Battery.setCells(volts);
         }
     }
