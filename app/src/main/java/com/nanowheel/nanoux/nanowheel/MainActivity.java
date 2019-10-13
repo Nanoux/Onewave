@@ -341,6 +341,12 @@ public class MainActivity extends AppCompatActivity implements BottomNavigationV
                 }
                 break;
 
+            case SharedPreferencesUtil.METHOD_BATTERY:
+                if (BluetoothService.isExist) {
+                    BluetoothService.mService.mOWDevice.forceBatteryRemaining();
+                }
+                break;
+
         }
 
     }

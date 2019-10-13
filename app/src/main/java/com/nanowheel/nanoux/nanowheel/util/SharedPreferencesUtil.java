@@ -41,11 +41,12 @@ public class SharedPreferencesUtil{
     private static final String REGEN_NOT_VALUE = "warningRegenThresh";
     private static final String SENSOR_NOT = "notificationSensor";
     private static final String SPEED_REC_NOT = "notificationSpeed";
-    private static final String METHOD_BATTERY = "batteryMethod";
+    public static final String METHOD_BATTERY = "batteryMethod";
     private static final String DEFAULT_BATTERY = "batteryDefault";
     private static final String OUTPUT_BATTERY = "batteryVoltage";
     private static final String CELLS_BATTERY = "batteryCells";
     private static final String TWO_X_BATTERY = "batteryTwoX";
+    private static final String TWO_X_STATE = "batteryStateTwoX";
     //private static final String CHALLENGE_EPOCH = "callengeEpoch";
     private static final String LAST_UPDATE_DAY = "lastUpdateDay";
     private static final String UPDATE_DATA = "updateData";
@@ -284,6 +285,12 @@ public class SharedPreferencesUtil{
     }
     public boolean getIsBatteryTwoX(){
         return androidSharedPreferences.getString(METHOD_BATTERY, DEFAULT_BATTERY).equals(TWO_X_BATTERY);
+    }
+    public String getTripBatteryState(){
+        return(androidSharedPreferences.getString(TWO_X_STATE, "{}"));
+    }
+    public void setTripBatteryState(String state){
+        putString(state, TWO_X_STATE);
     }
 
     public int getLastUpdateDay(){ return androidSharedPreferences.getInt(LAST_UPDATE_DAY,-1);}

@@ -102,6 +102,7 @@ public class BluetoothUtilImpl implements BluetoothUtil{
                 NotificationBuilder.createScanningNot(application,"Onewheel Found, Connecting...",true);
                 isOWFound.set("true");
                 gatt.discoverServices();
+                Battery.initStateTwoX(SharedPreferencesUtil.getPrefs(application));
             } else if (newState == BluetoothProfile.STATE_DISCONNECTED) {
 
                 if (BluetoothService.isExist) {

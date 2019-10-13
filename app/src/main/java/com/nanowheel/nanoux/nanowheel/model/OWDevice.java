@@ -154,7 +154,6 @@ public class OWDevice extends BaseObservable implements DeviceInterface {
     private double[] batteryVoltageCells = new double[16];
 
     private boolean updateBatteryChanges = true;
-    private String updateBatteryMethod = "";
 
 
 
@@ -343,14 +342,15 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         //Notification Characteristics when the diagnotics page is open
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTiltAnglePitch, KEY_TILT_ANGLE_PITCH,   "Pitch",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTiltAngleRoll, KEY_TILT_ANGLE_ROLL,   "Roll",0));
+        deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicUNKNOWN2, KEY_CUSTOM_SHAPING,   "Custom Shaping Bullshit",0));
 
         //Additional Characteristics needed to track battery usage
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicCurrentAmps, KEY_CURRENT_AMPS,   "Current Amps",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryCells, KEY_BATTERY_CELLS,   "Battery Cell Voltages",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryVoltage, KEY_BATTERY_VOLTAGE,   "Battery Voltage",0));
-        deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperature",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTripTotalAmpHours, KEY_TRIP_AMPS,   "Trip Amp Hours",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTripRegenAmpHours, KEY_TRIP_AMPS_REGEN,   "Trip Amp Hours Regen",0));
+	   //TODO: move KEY_BATTERY_TEMP here and make room if temperature needed
 
         //state 1 is for things to sub and unsub from dynamically, not implemented anymore
 
@@ -377,8 +377,8 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
 
         //Read these for the diagnotics page
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTemperature, KEY_CONTROLLER_TEMP,   "Controller Temp",4));
+        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperature",4));
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicLifetimeAmpHours, KEY_AMP_HOURS_LIFE,   "Lifetime Amp Hours",4));
-        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicUNKNOWN2, KEY_CUSTOM_SHAPING,   "Custom Shaping Bullshit",4));
 
         characteristics.clear();
         for (DeviceCharacteristic deviceNotifyCharacteristic : deviceNotifyCharacteristics) {
@@ -838,7 +838,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
     private void processBatteryCellsVoltage(byte[] incomingValue, DeviceCharacteristic dc) {
         int cellIdentifier = Util.unsignedByte(incomingValue[0]);
         double volts = 0.0;
-	   int count = 0;
+        int count = 0;
 
         if(cellIdentifier < batteryVoltageCells.length && cellIdentifier >= 0) {
             int var3 = Util.unsignedByte(incomingValue[1]);
@@ -883,13 +883,12 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         updateBatteryChanges |= Battery.setAmps(amps);
     }
 
+    public void forceBatteryRemaining() {
+        updateBatteryChanges=true;
+    }
+
     public void setBatteryRemaining() {
         SharedPreferencesUtil prefs = SharedPreferencesUtil.getPrefs(context);
-
-        if (! prefs.getBatteryMethod().equals(updateBatteryMethod)) {
-            updateBatteryMethod=prefs.getBatteryMethod();
-            updateBatteryChanges=true;
-        }
 
         if (updateBatteryChanges) {
             DeviceCharacteristic dc = characteristics.get(OnewheelCharacteristicBatteryRemaining);
@@ -902,6 +901,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
                 remaining = Battery.getRemainingCells();
             } else if (prefs.getIsBatteryTwoX()) {
                 remaining = Battery.getRemainingTwoX();
+                Battery.saveStateTwoX(prefs);
             } else {
                 remaining = Battery.getRemainingDefault();
             }
