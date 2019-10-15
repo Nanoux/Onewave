@@ -20,5 +20,6 @@ public interface BluetoothUtil {
     //void killCustomNotifications();
     void writeCustomRidemode();
     void refreshSomeDiagnotics();
+    void refreshPeriodicDiagnostics();
     void killDiagnotics();
 }

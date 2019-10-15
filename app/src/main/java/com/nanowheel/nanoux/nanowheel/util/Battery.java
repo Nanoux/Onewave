@@ -32,6 +32,7 @@ public class Battery {
     private static int    cellCount = 16;
     private static double fmLimitPercent = FM_LIMIT_PERCENT;
     private static double txExtraPercent = TX_EXTRA_PERCENT;
+    private static double batteryTemp = 30;
     private static double medianOutput = LiFePO4_16_OUTPUT;
     private static double medianCells = LiFePO4_16_CELLS;
     private static double avgVoltsOut = -1.0;
@@ -269,7 +270,7 @@ public class Battery {
     }
 
     public static boolean setBatteryTemp(int temp) {
-        int percent = 0;
+        double percent = 0;
 
         //TODO: do we need this, or can we take it out (so far, take it out)
         //Temp (in Celcius) comes from enclosed battery box, not ambient
@@ -277,7 +278,9 @@ public class Battery {
         //These are not tested
         //!tempCurveRatio = 1+(temp-30)/100;
 
-        percent=(temp-30)/5;
+	   // Slowly change the battery temp so remaining% doesn't hop around
+	   batteryTemp = batteryTemp*0.9 + temp*0.1;
+        percent = (batteryTemp-30) / 5;
         fmLimitPercent = FM_LIMIT_PERCENT-percent;
         txExtraPercent = TX_EXTRA_PERCENT+percent;
 

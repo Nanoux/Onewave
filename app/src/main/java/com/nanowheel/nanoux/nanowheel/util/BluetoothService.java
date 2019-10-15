@@ -316,6 +316,21 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
         }, repeatTime);
     }
 
+    public static void periodicCharacteristics() {
+        final int repeatTime = 60000;
+        final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                if(isExist && bluetoothUtil != null) {
+                    bluetoothUtil.refreshPeriodicDiagnostics();
+                    handler.postDelayed(this, repeatTime);
+			 }
+            }
+        }, 1000); //only wait a second long for first round
+    }
+
+
     public void updateBatteryWidgets(){
         WidgetUpdater.updateBattery(getApplication());
     }

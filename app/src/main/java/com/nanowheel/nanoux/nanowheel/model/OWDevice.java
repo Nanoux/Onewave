@@ -342,6 +342,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         //Notification Characteristics when the diagnotics page is open
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTiltAnglePitch, KEY_TILT_ANGLE_PITCH,   "Pitch",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTiltAngleRoll, KEY_TILT_ANGLE_ROLL,   "Roll",0));
+        deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicUNKNOWN2, KEY_CUSTOM_SHAPING,   "Custom Shaping Bullshit",0));
 
         //Additional Characteristics needed to track battery usage
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicCurrentAmps, KEY_CURRENT_AMPS,   "Current Amps",0));
@@ -349,7 +350,6 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryVoltage, KEY_BATTERY_VOLTAGE,   "Battery Voltage",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTripTotalAmpHours, KEY_TRIP_AMPS,   "Trip Amp Hours",0));
         deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTripRegenAmpHours, KEY_TRIP_AMPS_REGEN,   "Trip Amp Hours Regen",0));
-        deviceNotifyCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperature",0));
 
         //state 1 is for things to sub and unsub from dynamically, not implemented anymore
 
@@ -373,12 +373,13 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicSerialNumber, KEY_SERIAL_NUMBER,   "Serial Number",3));
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatterySerial, KEY_SERIAL_NUMBER_BATT,   "Serial Number Battery",3));
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicCustomName, KEY_CUSTOM_NAME,   "Custom Name",3));
-	   //Moved KEY_CUSTOM_SHAPING here from Notify (passed 15 limit).  Shouldn't this be updated only when changes are made, anyway?
-        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicUNKNOWN2, KEY_CUSTOM_SHAPING,   "Custom Shaping Bullshit",3));
 
         //Read these for the diagnotics page
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicTemperature, KEY_CONTROLLER_TEMP,   "Controller Temp",4));
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicLifetimeAmpHours, KEY_AMP_HOURS_LIFE,   "Lifetime Amp Hours",4));
+
+        //Read these once a minute
+        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperature",5));
 
         characteristics.clear();
         for (DeviceCharacteristic deviceNotifyCharacteristic : deviceNotifyCharacteristics) {
@@ -389,6 +390,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         }
 
         refreshCharacteristics(context);
+        BluetoothService.periodicCharacteristics();
     }
 
     private void refreshCharacteristics(Context context) {

@@ -151,7 +151,6 @@ public class BluetoothUtilImpl implements BluetoothUtil{
                     mGatt.readCharacteristic(owGatService.getCharacteristic(UUID.fromString(OWDevice.OnewheelCharacteristicFirmwareRevision)));
                 }
             },500);
-
         }
 
         @Override
@@ -597,6 +596,22 @@ public class BluetoothUtilImpl implements BluetoothUtil{
         if (mOWDevice != null && owGatService != null && mGatt != null) {
             for (OWDevice.DeviceCharacteristic dc : mOWDevice.getReadCharacteristics()) {
                 if (dc.state == 4) {
+                    BluetoothGattCharacteristic gC = owGatService.getCharacteristic(UUID.fromString(dc.uuid.get()));
+                    if (gC != null) {
+                        characteristicReadQueue.add(gC);
+                        if (characteristicReadQueue.size() == 1) {
+                            mGatt.readCharacteristic(characteristicReadQueue.element());
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    public void refreshPeriodicDiagnostics(){
+        if (mOWDevice != null && owGatService != null && mGatt != null) {
+            for (OWDevice.DeviceCharacteristic dc : mOWDevice.getReadCharacteristics()) {
+                if (dc.state == 5) {
                     BluetoothGattCharacteristic gC = owGatService.getCharacteristic(UUID.fromString(dc.uuid.get()));
                     if (gC != null) {
                         characteristicReadQueue.add(gC);
