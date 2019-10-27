@@ -14,6 +14,7 @@ import androidx.databinding.ObservableField;
 //import android.graphics.PixelFormat;
 import android.os.Build;
 import android.os.Handler;
+import android.os.Looper;
 import android.os.IBinder;
 /*import android.provider.Settings;
 import android.util.TypedValue;
@@ -46,6 +47,9 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
     public OWDevice mOWDevice;
     public static BluetoothService mService;
     static BluetoothUtil bluetoothUtil;
+
+    //private static Handler handler;
+    private static Handler handler = new Handler(Looper.getMainLooper());
 
     //private WindowManager mWindowManager;
     //private View mChatHeadView;
@@ -94,6 +98,9 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
         test.registerListener(this);
 
         Scan();
+
+        deviceConnectedTimer();
+        periodicCharacteristics();
 
         return START_STICKY;
     }
@@ -250,9 +257,6 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
                             startFloater();
                         }
                     }*/
-                    if(bluetoothUtil.isObfucked()) {
-                        deviceConnectedTimer();
-                    }
                 }
                 break;
 
@@ -304,30 +308,28 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
 
     public void deviceConnectedTimer() {
         final int repeatTime = 15000;
-        final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(isExist && SharedPreferencesUtil.getPrefs(getBaseContext()).getStatusMode() == 2) {
-                    mOWDevice.sendKeyChallengeForGemini(getBluetoothUtil());
-                    handler.postDelayed(this, repeatTime);
+                if(isExist && mOWDevice != null && SharedPreferencesUtil.getPrefs(getBaseContext()).getStatusMode() == 2 && bluetoothUtil != null && bluetoothUtil.isObfucked()) {
+                    mOWDevice.sendKeyChallengeForGemini(bluetoothUtil);
                 }
+                handler.postDelayed(this, repeatTime);
             }
         }, repeatTime);
     }
 
-    public static void periodicCharacteristics() {
+    public void periodicCharacteristics() {
         final int repeatTime = 60000;
-        final Handler handler = new Handler();
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                if(isExist && bluetoothUtil != null) {
+                if(isExist && SharedPreferencesUtil.getPrefs(getBaseContext()).getStatusMode() == 2 && bluetoothUtil != null) {
                     bluetoothUtil.refreshPeriodicDiagnostics();
-                    handler.postDelayed(this, repeatTime);
-			 }
+                }
+                handler.postDelayed(this, repeatTime);
             }
-        }, 1000); //only wait a second long for first round
+        }, 2000); //only wait a short time for first round
     }
 
 

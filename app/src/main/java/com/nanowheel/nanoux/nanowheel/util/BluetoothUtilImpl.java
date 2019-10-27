@@ -271,7 +271,7 @@ public class BluetoothUtilImpl implements BluetoothUtil{
 
             mOWDevice.setBatteryRemaining();
 
-            if (mOWDevice.characteristics.get(c.getUuid().toString()).state == 5){
+            if (mOWDevice.characteristics.get(c.getUuid().toString()).state == 6){
                 Log.w("TESTING","HUZZAH! CHANGED");
             }
         }

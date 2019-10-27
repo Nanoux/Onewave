@@ -7,7 +7,6 @@ import androidx.databinding.ObservableDouble;
 import androidx.databinding.ObservableField;
 import androidx.databinding.ObservableInt;
 import android.location.Address;
-import android.os.Handler;
 import android.util.Log;
 import android.util.SparseArray;
 import android.view.View;
@@ -380,6 +379,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
 
         //Read these once a minute
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperature",5));
+        //deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicLastErrorCode, KEY_LAST_ERROR_CODE,   "Last Error Code",5));
 
         characteristics.clear();
         for (DeviceCharacteristic deviceNotifyCharacteristic : deviceNotifyCharacteristics) {
@@ -390,7 +390,6 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         }
 
         refreshCharacteristics(context);
-        BluetoothService.periodicCharacteristics();
     }
 
     private void refreshCharacteristics(Context context) {
