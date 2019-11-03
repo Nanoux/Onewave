@@ -16,6 +16,7 @@ import android.os.Build;
 import android.os.Handler;
 import android.os.Looper;
 import android.os.IBinder;
+import android.util.Log;
 /*import android.provider.Settings;
 import android.util.TypedValue;
 import android.view.Gravity;
@@ -44,7 +45,7 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
 
     public static boolean isExist = false;
     static int lastSpeed = -1;
-    public OWDevice mOWDevice;
+    public static OWDevice mOWDevice = null;
     public static BluetoothService mService;
     static BluetoothUtil bluetoothUtil;
 
@@ -66,8 +67,10 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
             }
         }
     }
-    public static void killService(Context context, boolean reboot){
+    public static synchronized void killService(Context context, boolean reboot){
         if (isExist) {
+	       isExist = false;  //here because of race from multiple invocations
+            Log.w("killService", "Calling stopService with reboot="+reboot);
             context.stopService(new Intent(context, BluetoothService.class));
             if (reboot){
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -290,8 +293,13 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
         if (canDo){
             bluetoothUtil.startScanning();
         }else{
-            stopForeground(true);
-            stopSelf();
+            //Eliminate one cause of "Context.startForegroundService()
+            //did not then call Service.startForeground()"
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+                stopForeground(true);
+            } else {
+                stopSelf();
+            }
         }
     }
 

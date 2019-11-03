@@ -970,8 +970,10 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
             battStart = battery;
         }
         if (battStart >= 0 && battery < battStart && rStart < 0){
-            rStart = Util.parseF(characteristics.get(OnewheelCharacteristicOdometer).value.get());
-            battStartCalc = battery;
+            if (characteristics.get(OnewheelCharacteristicOdometer).value.get() != null) {
+                rStart = Util.parseF(characteristics.get(OnewheelCharacteristicOdometer).value.get());
+                battStartCalc = battery;
+            }
         }
         if (battStartCalc >= 0 && battery < battStartCalc && rStart >= 0) {
             if (characteristics.get(OnewheelCharacteristicOdometer).value.get() != null) {

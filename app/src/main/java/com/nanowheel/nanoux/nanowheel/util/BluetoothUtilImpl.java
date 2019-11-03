@@ -150,7 +150,7 @@ public class BluetoothUtilImpl implements BluetoothUtil{
                 public void run() {
                     mGatt.readCharacteristic(owGatService.getCharacteristic(UUID.fromString(OWDevice.OnewheelCharacteristicFirmwareRevision)));
                 }
-            },500);
+            },750);
         }
 
         @Override
@@ -179,8 +179,15 @@ public class BluetoothUtilImpl implements BluetoothUtil{
 
             }
 
-
-            mOWDevice.processUUID(c);
+            try {
+                mOWDevice.processUUID(c);
+            } catch (Exception e) {
+                if (e.getMessage() != null) {
+                    Log.w("processUUID", e.getMessage());
+                }else{
+                    Log.w("processUUID", e.toString());
+                }
+            }
 
             mOWDevice.setBatteryRemaining();
 
@@ -267,7 +274,15 @@ public class BluetoothUtilImpl implements BluetoothUtil{
 
             }
 
-            mOWDevice.processUUID(c);
+            try {
+                mOWDevice.processUUID(c);
+            } catch (Exception e) {
+                if (e.getMessage() != null) {
+                    Log.w("processUUID", e.getMessage());
+                }else{
+                    Log.w("processUUID", e.toString());
+                }
+            }
 
             mOWDevice.setBatteryRemaining();
 
