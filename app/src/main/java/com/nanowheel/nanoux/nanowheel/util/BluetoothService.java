@@ -42,15 +42,16 @@ import static com.nanowheel.nanoux.nanowheel.model.OWDevice.OnewheelCharacterist
 
 @SuppressWarnings("ConstantConditions")
 public class BluetoothService extends Service implements SharedPreferences.OnSharedPreferenceChangeListener  {
-
     public static boolean isExist = false;
     static int lastSpeed = -1;
-    public static OWDevice mOWDevice = null;
+    public OWDevice mOWDevice = null;
     public static BluetoothService mService;
     static BluetoothUtil bluetoothUtil;
 
-    //private static Handler handler;
-    private static Handler handler = new Handler(Looper.getMainLooper());
+    private Handler handler;
+    private static int deviceConnectedTimerCount = 0;
+    private static int periodicSchedulerCount = 0;
+
 
     //private WindowManager mWindowManager;
     //private View mChatHeadView;
@@ -69,8 +70,7 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
     }
     public static synchronized void killService(Context context, boolean reboot){
         if (isExist) {
-	       isExist = false;  //here because of race from multiple invocations
-            Log.w("killService", "Calling stopService with reboot="+reboot);
+            isExist = false;  //here because of race from multiple invocations
             context.stopService(new Intent(context, BluetoothService.class));
             if (reboot){
                 if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
@@ -85,6 +85,7 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
     @Override
     public int onStartCommand(Intent intent, int flags, int startid) {
         mService = this;
+        handler = new Handler(Looper.getMainLooper());
 
         startForeground(NotificationBuilder.SATICJOBID,NotificationBuilder.createScanningNot(this,"Scanning...",false));
 
@@ -101,7 +102,6 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
         test.registerListener(this);
 
         Scan();
-
         deviceConnectedTimer();
         periodicCharacteristics();
 
@@ -316,26 +316,41 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
 
     public void deviceConnectedTimer() {
         final int repeatTime = 15000;
+
+        deviceConnectedTimerCount++;
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
+                Log.d("nanoux/deviceConnectChallenge", "isExist="+isExist);
                 if(isExist && mOWDevice != null && SharedPreferencesUtil.getPrefs(getBaseContext()).getStatusMode() == 2 && bluetoothUtil != null && bluetoothUtil.isObfucked()) {
                     mOWDevice.sendKeyChallengeForGemini(bluetoothUtil);
                 }
-                handler.postDelayed(this, repeatTime);
+                if (deviceConnectedTimerCount == 1) {
+                    handler.postDelayed(this, repeatTime);
+                } else {
+                    deviceConnectedTimerCount--;
+                }
             }
         }, repeatTime);
     }
 
     public void periodicCharacteristics() {
         final int repeatTime = 60000;
+
+        periodicSchedulerCount++;
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
                 if(isExist && SharedPreferencesUtil.getPrefs(getBaseContext()).getStatusMode() == 2 && bluetoothUtil != null) {
                     bluetoothUtil.refreshPeriodicDiagnostics();
                 }
-                handler.postDelayed(this, repeatTime);
+                if (periodicSchedulerCount == 1) {
+                    handler.postDelayed(this, repeatTime);
+                } else {
+                    periodicSchedulerCount--;
+                }
             }
         }, 2000); //only wait a short time for first round
     }

@@ -183,9 +183,9 @@ public class BluetoothUtilImpl implements BluetoothUtil{
                 mOWDevice.processUUID(c);
             } catch (Exception e) {
                 if (e.getMessage() != null) {
-                    Log.w("processUUID", e.getMessage());
+                    Log.w("nanoux/processUUID", e.getMessage());
                 }else{
-                    Log.w("processUUID", e.toString());
+                    Log.w("nanoux/processUUID", e.toString());
                 }
             }
 
@@ -278,9 +278,9 @@ public class BluetoothUtilImpl implements BluetoothUtil{
                 mOWDevice.processUUID(c);
             } catch (Exception e) {
                 if (e.getMessage() != null) {
-                    Log.w("processUUID", e.getMessage());
+                    Log.w("nanoux/processUUID", e.getMessage());
                 }else{
-                    Log.w("processUUID", e.toString());
+                    Log.w("nanoux/processUUID", e.toString());
                 }
             }
 
