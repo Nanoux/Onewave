@@ -322,7 +322,6 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
-                Log.d("nanoux/deviceConnectChallenge", "isExist="+isExist);
                 if(isExist && mOWDevice != null && SharedPreferencesUtil.getPrefs(getBaseContext()).getStatusMode() == 2 && bluetoothUtil != null && bluetoothUtil.isObfucked()) {
                     mOWDevice.sendKeyChallengeForGemini(bluetoothUtil);
                 }

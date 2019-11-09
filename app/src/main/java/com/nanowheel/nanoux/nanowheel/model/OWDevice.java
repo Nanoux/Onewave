@@ -1030,7 +1030,11 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
     public void modeChange(View view, int ID, int ID2){
         final TextView textMode = view.findViewById(ID);
         String value = characteristics.get(OnewheelCharacteristicRidingMode).value.get();
-        if(value == null)  return;
+        if (value == null) {
+            Log.d("nanowheel/modeChange", "got null mode");
+            isConnected.set(false); //things didn't work out so well, try again!
+            return;
+        }
         final int disVal = Math.round(Util.parseF(value));
         textMode.post(new Runnable() {
             @Override
