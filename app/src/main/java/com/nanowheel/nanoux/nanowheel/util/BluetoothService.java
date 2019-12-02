@@ -339,6 +339,10 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
 
         periodicSchedulerCount++;
 
+        if(isExist && SharedPreferencesUtil.getPrefs(getBaseContext()).getStatusMode() == 2 && bluetoothUtil != null) {
+            bluetoothUtil.refreshPeriodicDiagnostics();
+        }
+
         handler.postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -351,7 +355,7 @@ public class BluetoothService extends Service implements SharedPreferences.OnSha
                     periodicSchedulerCount--;
                 }
             }
-        }, 2000); //only wait a short time for first round
+        }, repeatTime);
     }
 
 
