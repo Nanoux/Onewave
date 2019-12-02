@@ -378,7 +378,7 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
         deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicLifetimeAmpHours, KEY_AMP_HOURS_LIFE,   "Lifetime Amp Hours",4));
 
         //Read these once a minute
-        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperature",5));
+        deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicBatteryTemp, KEY_BATTERY_TEMP,   "Battery Temperatures",5));
         //deviceReadCharacteristics.add(new DeviceCharacteristic(OnewheelCharacteristicLastErrorCode, KEY_LAST_ERROR_CODE,   "Last Error Code",5));
 
         characteristics.clear();
@@ -711,7 +711,12 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
 
     private void setFormattedTempWithMetricPreference(DeviceCharacteristic deviceCharacteristic, int temp) {
         boolean isMetric = SharedPreferencesUtil.getPrefs(context).isMetric();
-        deviceCharacteristic.value.set(String.format(Locale.getDefault(), "%.2f", isMetric ? (double) temp : Util.cel2far(temp)));
+        deviceCharacteristic.value.set(String.format(Locale.getDefault(), "%.0f°", isMetric ? (double) temp : Util.cel2far(temp)));
+    }
+
+    private void setFormattedTempWithMetricPreference(DeviceCharacteristic deviceCharacteristic, int temp1, int temp2) {
+        boolean isMetric = SharedPreferencesUtil.getPrefs(context).isMetric();
+        deviceCharacteristic.value.set(String.format(Locale.getDefault(), "%.0f°, %.0f°", isMetric ? (double) temp1 : Util.cel2far(temp1), isMetric ? (double) temp2 : Util.cel2far(temp2)));
     }
 
     private void setFormattedSpeedWithMetricPreference(DeviceCharacteristic deviceCharacteristic, double speedRpm) {
@@ -720,12 +725,13 @@ gatttool --device=D0:39:72:BE:0A:32 --char-write-req --value=7500 --handle=0x004
     }
 
     private void processBatteryTemp(BluetoothGattCharacteristic incomingCharacteristic, DeviceCharacteristic dc) {
-        int batteryTemp = incomingCharacteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
+        int batteryTemp1 = incomingCharacteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 0);
+        int batteryTemp2 = incomingCharacteristic.getIntValue(BluetoothGattCharacteristic.FORMAT_UINT8, 1);
 
         //Timber.d("batteryTemp = " + batteryTemp);
 
-        setFormattedTempWithMetricPreference(dc, batteryTemp);
-        updateBatteryChanges |= Battery.setBatteryTemp(batteryTemp);
+        setFormattedTempWithMetricPreference(dc, batteryTemp1, batteryTemp2);
+        updateBatteryChanges |= Battery.setBatteryTemp((batteryTemp1+batteryTemp2) / 2);
     }
 
     private void processCustomRidemode(BluetoothGattCharacteristic incomingCharacteristic, DeviceCharacteristic dc){

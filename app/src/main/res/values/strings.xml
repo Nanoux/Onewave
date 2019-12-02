@@ -61,7 +61,7 @@
     <string name="cell_voltages">Cell Voltages</string>
     <string name="controller_temperature">Controller Temperature</string>
     <string name="motor_temperature">Motor Temperature</string>
-    <string name="battery_temperature">Battery Temperature</string>
+    <string name="battery_temperature">Battery Temperatures</string>
     <string name="hardware_revision">Hardware Revision</string>
     <string name="software_revision">Software Revision</string>
     <string name="refresh">Refresh</string>
