@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/nanoux/androidStudioProjects/Nanowheel/Nanowheel/app/build/intermediates/incremental/mergeProReleaseResources/merged.dir/values-sw320dp-v13/values-sw320dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/cc1212080319d7a6fbf3828c87821722/material-1.1.0-alpha07/res/values-sw320dp-v13/values-sw320dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,109",
+                        "endColumns": "53,60",
+                        "endOffsets": "104,165"
+                    }
+                }
+            ]
+        }
+    ]
+}

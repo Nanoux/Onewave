@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/custom_shaping"
+        android:textSize="24sp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="15dp"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:text="@string/carveability"/>
+
+        <TextView
+            android:id="@+id/value_carvability"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:textSize="16sp"
+            android:text="@string/value"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="@string/loose"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="@string/tight"/>
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/bar_carvability"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:max="20"
+            android:progress="0"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:text="@string/stance"/>
+
+        <TextView
+            android:id="@+id/value_stance"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:textSize="16sp"
+            android:text="@string/value"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="@string/stance_low"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="@string/stance_high"/>
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/bar_stance"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:max="20"
+            android:progress="0"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:textSize="20sp"
+            android:text="@string/aggressiveness"/>
+
+        <TextView
+            android:id="@+id/value_aggressiveness"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:layout_alignParentEnd="true"
+            android:textSize="16sp"
+            android:text="@string/value"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_marginBottom="30dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="@string/slow"/>
+
+        <TextView
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_alignParentEnd="true"
+            android:gravity="center"
+            android:textSize="16sp"
+            android:text="@string/fast"/>
+
+        <androidx.appcompat.widget.AppCompatSeekBar
+            android:id="@+id/bar_aggressiveness"
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:max="20"
+            android:progress="0"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

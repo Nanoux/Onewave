@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_marginBottom="60dp"
+        android:background="@drawable/shadow"
+        android:elevation="15dp"
+        android:padding="4dp">
+
+
+        <ImageView
+            android:id="@+id/batteryBarBackC"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@android:color/white" />
+
+        <TextView
+            android:id="@+id/batteryTextC"
+            android:layout_width="130dp"
+            android:layout_height="58dp"
+            android:layout_centerVertical="true"
+            android:gravity="center"
+            android:text="87%"
+            android:textColor="@android:color/black"
+            android:textSize="40sp" />
+
+        <ProgressBar
+            android:id="@+id/batteryBarC"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="58dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="130dp"
+            android:layout_marginEnd="30dp"
+            android:max="100"
+            android:progress="87"
+            android:scaleY="2" />
+    </RelativeLayout>
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:onClick="showPopupText">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/text_color"
+            android:layout_margin="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textColor="?colorOnSurface"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/add_button_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/black"
+            android:layout_margin="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="?attr/colorAccent"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:onClick="showPopupBack">
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/background_color"
+            android:layout_margin="8dp"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:textColor="?colorOnSurface"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/add_button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/white"
+            android:layout_margin="8dp"
+            android:layout_alignParentEnd="true"
+            android:layout_centerVertical="true"
+            android:textColor="?attr/colorAccent"
+            android:textSize="18sp"/>
+
+    </RelativeLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="64dp"
+        android:text="@string/add_widget" />
+
+
+
+</LinearLayout>

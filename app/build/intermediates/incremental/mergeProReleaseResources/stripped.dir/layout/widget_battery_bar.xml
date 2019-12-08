@@ -1,0 +1,36 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/batteryCircle"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+
+
+    <ImageView
+        android:id="@+id/batteryBarBackW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@android:color/white" />
+
+    <TextView
+        android:id="@+id/batteryTextW"
+        android:layout_width="130dp"
+        android:layout_height="58dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:text="0%"
+        android:textSize="40sp" />
+
+    <ProgressBar
+        android:id="@+id/batteryBarW"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="match_parent"
+        android:layout_height="58dp"
+        android:layout_marginStart="130dp"
+        android:layout_marginEnd="30dp"
+        android:layout_centerVertical="true"
+        android:progress="0"
+        android:max="100"
+        android:scaleY="2"/>
+</RelativeLayout>

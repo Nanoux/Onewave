@@ -1,0 +1,7 @@
+#Sun Dec 08 13:31:44 PST 2019
+base.0=/home/roxy/Documents/Android Studio Projects/Onewave/Nanowheel/app/build/intermediates/dex/proDebug/mergeExtDexProDebug/out/classes.dex
+path.1=classes.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=/home/roxy/Documents/Android Studio Projects/Onewave/Nanowheel/app/build/intermediates/dex/proDebug/mergeProjectDexProDebug/out/classes.dex

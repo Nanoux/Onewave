@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:orientation="vertical"
+    android:background="@color/color_background">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Trip Logging Included in the Pro Version!"
+        android:layout_margin="16dp"
+        android:gravity="center"
+        android:textSize="36sp"
+        android:textColor="?colorOnBackground"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Also Included:"
+        android:textSize="24sp"
+        android:layout_margin="8dp"
+        android:textColor="?colorOnBackground"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* Dark Mode"
+        android:textSize="20sp"
+        android:layout_margin="8dp"
+        android:textColor="?colorOnBackground"/>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* More Widgets"
+        android:textSize="20sp"
+        android:layout_margin="8dp"
+        android:textColor="?colorOnBackground"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="* Floating Status Window"
+        android:textSize="20sp"
+        android:layout_margin="8dp"
+        android:textColor="?colorOnBackground"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_plug"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="16dp"
+        android:text="Check it out"/>
+
+
+</LinearLayout>

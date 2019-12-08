@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/nanoux/androidStudioProjects/Nanowheel/Nanowheel/app/build/intermediates/incremental/mergeProReleaseResources/merged.dir/values-hdpi-v4/values-hdpi-v4.xml",
+            "map": [
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/4b24354f419efcdea201153591da089b/appcompat-1.1.0-beta01/res/values-hdpi-v4/values-hdpi-v4.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "13",
+                        "endOffsets": "327"
+                    }
+                }
+            ]
+        }
+    ]
+}

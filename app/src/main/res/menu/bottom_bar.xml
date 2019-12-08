@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item android:id="@+id/overview_button"
+        android:title="Overview"
+        android:icon="@drawable/ic_bottom_main"
+        app:showAsAction="always"/>
+    <item android:id="@+id/diagnotics_button"
+        android:title="Diagnostics"
+        android:icon="@drawable/ic_bottom_diagnotics"
+        app:showAsAction="always" />
+    <item android:id="@+id/map_button"
+        android:title="Trips"
+        android:icon="@drawable/ic_bottom_map"
+        app:showAsAction="always" />
+    <item android:id="@+id/settings_button"
+        android:title="Settings"
+        android:icon="@drawable/ic_bottom_settings"
+        app:showAsAction="always" >
+    </item>
+</menu>

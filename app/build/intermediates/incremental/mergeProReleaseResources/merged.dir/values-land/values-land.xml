@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="abc_action_bar_default_height_material">48dp</dimen>
+    <dimen name="abc_text_size_subtitle_material_toolbar">12dp</dimen>
+    <dimen name="abc_text_size_title_material_toolbar">14dp</dimen>
+    <dimen name="mtrl_alert_dialog_background_inset_bottom">24dp</dimen>
+    <dimen name="mtrl_alert_dialog_background_inset_end">24dp</dimen>
+    <dimen name="mtrl_alert_dialog_background_inset_start">24dp</dimen>
+    <dimen name="mtrl_alert_dialog_background_inset_top">24dp</dimen>
+    <style name="Widget.Design.TabLayout" parent="Base.Widget.Design.TabLayout">
+    <item name="tabGravity">center</item>
+    <item name="tabMode">fixed</item>
+  </style>
+</resources>

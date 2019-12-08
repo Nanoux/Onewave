@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<set xmlns:android="http://schemas.android.com/apk/res/android"
+    android:duration="300"
+    android:interpolator="@android:anim/accelerate_decelerate_interpolator">
+    <translate
+        android:fromXDelta="-100%"
+        android:toXDelta="0%">
+    </translate>
+
+    <scale
+        android:fromXScale="80%"
+        android:toXScale="100%"
+        android:fromYScale="80%"
+        android:toYScale="100%"
+        android:pivotX="0%"
+        android:pivotY="50%">
+
+    </scale>
+
+</set>

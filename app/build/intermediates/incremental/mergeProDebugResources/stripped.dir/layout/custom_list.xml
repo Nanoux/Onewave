@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:minHeight="?android:attr/listPreferredItemHeight"
+    android:gravity="center_vertical"
+    android:paddingStart="16dip"
+    android:paddingEnd="?android:attr/scrollbarSize">
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:minWidth="0dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@android:id/icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            />
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="6dip"
+        android:layout_marginTop="6dip"
+        android:layout_marginBottom="6dip"
+        android:layout_weight="1">
+
+        <TextView android:id="@android:id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:layout_marginStart="80dp"
+            android:textColor="?colorOnSurface"
+            android:singleLine="true"
+            android:ellipsize="marquee"
+            android:fadingEdge="horizontal" />
+
+        <TextView
+            android:id="@android:id/summary"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:textColor="?colorPrimary"
+            android:layout_marginStart="6dp"
+            android:maxLines="4" />
+
+    </RelativeLayout>
+
+    <!-- Preference should place its actual preference widget here. -->
+    <LinearLayout android:id="@android:id/widget_frame"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" />
+
+</LinearLayout>

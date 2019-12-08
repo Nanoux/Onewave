@@ -1,0 +1,43 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/nanoux/androidStudioProjects/Nanowheel/Nanowheel/app/build/intermediates/incremental/mergeProReleaseResources/merged.dir/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/ae61e6e42afe514be894ce990465e8bf/preference-1.0.0/res/values-sw360dp-v13/values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,127",
+                        "endColumns": "71,64",
+                        "endOffsets": "122,187"
+                    },
+                    "to": {
+                        "startLines": "2,5",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,242",
+                        "endColumns": "71,64",
+                        "endOffsets": "122,302"
+                    }
+                },
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/cc1212080319d7a6fbf3828c87821722/material-1.1.0-alpha07/res/values-sw360dp-v13/values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2,3",
+                        "startColumns": "4,4",
+                        "startOffsets": "55,109",
+                        "endColumns": "53,60",
+                        "endOffsets": "104,165"
+                    },
+                    "to": {
+                        "startLines": "3,4",
+                        "startColumns": "4,4",
+                        "startOffsets": "127,181",
+                        "endColumns": "53,60",
+                        "endOffsets": "176,237"
+                    }
+                }
+            ]
+        }
+    ]
+}

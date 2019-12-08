@@ -1,0 +1,411 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:2:1-51:12
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:2:1-51:12
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:2:1-51:12
+MERGED from [androidx.databinding:databinding-adapters:3.5.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/82f04cebf9a2df0b2f17bece67331019/databinding-adapters-3.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.databinding:databinding-runtime:3.5.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/8f606a04201dd42647fb053f1291e98d/databinding-runtime-3.5.3/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.preference:preference:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c9808e429abf680ccd4a9858ea887b5/preference-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:17:1-38:12
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/cd2555db0203a9129fdeb1355c14dcc8/play-services-location-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /home/roxy/.gradle/caches/transforms-2/files-2.1/89960a8f9b5e73731627972c56f94153/material-1.2.0-alpha02/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/0078d1380dba3ee7366f8424e5e798e8/lifecycle-extensions-2.1.0/AndroidManifest.xml:17:1-25:12
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/6119d746697059b7e1b74aab4d181f56/appcompat-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:17:1-29:12
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2905ca591d95bf0e403f68a05d4ee4e5/play-services-places-placereport-17.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2b8a3547a6423f6fb15f19a78415dd89/play-services-tasks-17.0.0/AndroidManifest.xml:2:1-9:12
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:17:1-28:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /home/roxy/.gradle/caches/transforms-2/files-2.1/186cf7410ba9292941f5b58b427820ae/viewpager2-1.0.0-rc01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/0362ff4d8672321347a402c32368f192/fragment-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/dbbcc99072b5616db9e0106b8ed65934/activity-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/64ed055c454b36433d45a77285ee24d6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [com.android.volley:volley:1.1.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/2a1b18e94775767e825674c149e6a721/jetified-volley-1.1.1/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.recyclerview:recyclerview-selection:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/f2c361a5537ee34db639310e78351f96/recyclerview-selection-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a53596bdd308807993a20732db231575/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [com.github.lzyzsd:circleprogress:1.2.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/4631d097996978583e51887a663ddd11/circleprogress-1.2.1/AndroidManifest.xml:2:1-12:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-rc01] /home/roxy/.gradle/caches/transforms-2/files-2.1/4bcb6931121568f5b5a1d8f91bdc89ab/coordinatorlayout-1.1.0-rc01/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.2.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e95d1611d40c652e0f77a7c95d74a3f6/transition-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/ddf6a25e6e3e5e2af441269b48288beb/appcompat-resources-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/d1ca7cd3905794bed09cb92934ccd6c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4276267baf989d651cf25177c247ad49/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/00bc847ce5b9e3ce7b40d465bffbf9e9/drawerlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4932f7e67b26f042b51fa62f1aa4816d/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3c457ded457b98b207b4f227d629399/customview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.core:core:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/86183f609071467cbb11786cc9cbb026/lifecycle-service-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/ffa46f3d6480310395b7b525cf59ccde/lifecycle-runtime-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4fe44ae24daa7cfa2dd483a5d3b65a2f/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/4201d4fddd555218353508e225243933/sqlite-framework-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/97ca5fa275069525f960e29c6644a280/sqlite-2.0.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/720b2290ca550345d3df6fc1b6a7ac3a/lifecycle-livedata-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/11feedb5ce6b3e9b1eb69e2892e42453/lifecycle-livedata-core-2.1.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4cee4734b336f81c686d6e7b16dafec9/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3819fb4fef2e012192b32762458ba145/savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/fb2fbe77879a57ea0c5dfd6fe59ba874/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3a992d8307f21a8f15eb649383ba6a6a/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:2:1-68:12
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:2:1-68:12
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:2:1-68:12
+	package
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:4:5-45
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:2:1-51:12
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:2:1-51:12
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:2:11-69
+uses-feature#android.hardware.bluetooth_le
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:6:5-8:35
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:6:5-8:35
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:6:5-8:35
+	android:required
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:8:9-32
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:7:9-53
+uses-permission#android.permission.BLUETOOTH
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:10:5-68
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:10:5-68
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:10:5-68
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:10:22-65
+uses-permission#android.permission.BLUETOOTH_ADMIN
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:11:5-74
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:11:5-74
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:11:5-74
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:11:22-71
+uses-permission#android.permission.ACCESS_COARSE_LOCATION
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:12:5-81
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:12:5-81
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:12:5-81
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:12:22-78
+uses-permission#android.permission.ACCESS_FINE_LOCATION
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:13:5-79
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:13:5-79
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:13:5-79
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:13:22-76
+uses-permission#android.permission.ACCESS_BACKGROUND_LOCATION
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:14:5-85
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:14:22-82
+uses-permission#android.permission.FOREGROUND_SERVICE
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:15:5-77
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:15:5-77
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:15:5-77
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:15:22-74
+uses-permission#android.permission.INTERNET
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:16:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:24:5-67
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:16:22-64
+uses-permission#android.permission.CHANGE_NETWORK_STATE
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:17:5-79
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:17:22-76
+application
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:19:5-49:19
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:19:5-49:19
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:19:5-49:19
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:9:5-20
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:30:5-36:19
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/cd2555db0203a9129fdeb1355c14dcc8/play-services-location-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/cd2555db0203a9129fdeb1355c14dcc8/play-services-location-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /home/roxy/.gradle/caches/transforms-2/files-2.1/89960a8f9b5e73731627972c56f94153/material-1.2.0-alpha02/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /home/roxy/.gradle/caches/transforms-2/files-2.1/89960a8f9b5e73731627972c56f94153/material-1.2.0-alpha02/AndroidManifest.xml:22:5-20
+MERGED from [androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:24:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/0078d1380dba3ee7366f8424e5e798e8/lifecycle-extensions-2.1.0/AndroidManifest.xml:22:5-23:19
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/0078d1380dba3ee7366f8424e5e798e8/lifecycle-extensions-2.1.0/AndroidManifest.xml:22:5-23:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:22:5-27:19
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2905ca591d95bf0e403f68a05d4ee4e5/play-services-places-placereport-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2905ca591d95bf0e403f68a05d4ee4e5/play-services-places-placereport-17.0.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2b8a3547a6423f6fb15f19a78415dd89/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2b8a3547a6423f6fb15f19a78415dd89/play-services-tasks-17.0.0/AndroidManifest.xml:7:5-20
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:22:5-26:19
+MERGED from [com.android.volley:volley:1.1.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/2a1b18e94775767e825674c149e6a721/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [com.android.volley:volley:1.1.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/2a1b18e94775767e825674c149e6a721/jetified-volley-1.1.1/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:5-89
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:22:5-28:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:22:9-35
+	android:label
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:21:9-41
+	android:roundIcon
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:20:9-54
+	tools:ignore
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:24:9-48
+	android:icon
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:18:9-43
+	android:allowBackup
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:20:9-35
+	android:theme
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:23:9-48
+activity#com.nanowheel.nanoux.nanowheel.BubbleActivity
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:25:9-29:20
+	android:resizeableActivity
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:28:13-46
+	android:documentLaunchMode
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:27:13-48
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:25:19-49
+	android:allowEmbedded
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:26:13-41
+activity#com.nanowheel.nanoux.nanowheel.SplashActivity
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:30:9-36:20
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:30:9-36:20
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:30:9-36:20
+	android:theme
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:26:13-52
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:30:19-49
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:31:13-35:29
+action#android.intent.action.MAIN
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:32:17-69
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:32:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:34:17-77
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:34:27-74
+activity#com.nanowheel.nanoux.nanowheel.MainActivity
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:37:9-59
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:37:9-59
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:37:9-59
+	android:theme
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:34:13-52
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:37:19-47
+service#com.nanowheel.nanoux.nanowheel.util.BluetoothService
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:39:9-41:72
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:39:9-41:72
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:39:9-41:72
+	android:permission
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:41:13-69
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:40:13-50
+receiver#com.nanowheel.nanoux.nanowheel.util.BroadcastReciever
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:43:9-48:20
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:43:9-48:20
+MERGED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:43:9-48:20
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:43:19-57
+intent-filter#action:name:com.nanowheel.nanoux.nanowheel.BLUETOOTH_CANCEL+action:name:com.nanowheel.nanoux.nanowheel.LIGHTS
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:44:13-47:29
+action#com.nanowheel.nanoux.nanowheel.BLUETOOTH_CANCEL
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:45:17-90
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:45:25-87
+action#com.nanowheel.nanoux.nanowheel.LIGHTS
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:46:17-80
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:46:25-77
+uses-sdk
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:databinding-adapters:3.5.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/82f04cebf9a2df0b2f17bece67331019/databinding-adapters-3.5.3/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-adapters:3.5.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/82f04cebf9a2df0b2f17bece67331019/databinding-adapters-3.5.3/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.5.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/8f606a04201dd42647fb053f1291e98d/databinding-runtime-3.5.3/AndroidManifest.xml:22:5-44
+MERGED from [androidx.databinding:databinding-runtime:3.5.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/8f606a04201dd42647fb053f1291e98d/databinding-runtime-3.5.3/AndroidManifest.xml:22:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:1.1.3] /home/roxy/.gradle/caches/transforms-2/files-2.1/3ec6fa8458ddbe732478393a9f9e6c77/constraintlayout-1.1.3/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.preference:preference:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c9808e429abf680ccd4a9858ea887b5/preference-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c9808e429abf680ccd4a9858ea887b5/preference-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/cd2555db0203a9129fdeb1355c14dcc8/play-services-location-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-location:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/cd2555db0203a9129fdeb1355c14dcc8/play-services-location-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /home/roxy/.gradle/caches/transforms-2/files-2.1/89960a8f9b5e73731627972c56f94153/material-1.2.0-alpha02/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.2.0-alpha02] /home/roxy/.gradle/caches/transforms-2/files-2.1/89960a8f9b5e73731627972c56f94153/material-1.2.0-alpha02/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/0078d1380dba3ee7366f8424e5e798e8/lifecycle-extensions-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-extensions:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/0078d1380dba3ee7366f8424e5e798e8/lifecycle-extensions-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/6119d746697059b7e1b74aab4d181f56/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/6119d746697059b7e1b74aab4d181f56/appcompat-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2905ca591d95bf0e403f68a05d4ee4e5/play-services-places-placereport-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-places-placereport:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2905ca591d95bf0e403f68a05d4ee4e5/play-services-places-placereport-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2b8a3547a6423f6fb15f19a78415dd89/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-tasks:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/2b8a3547a6423f6fb15f19a78415dd89/play-services-tasks-17.0.0/AndroidManifest.xml:5:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /home/roxy/.gradle/caches/transforms-2/files-2.1/186cf7410ba9292941f5b58b427820ae/viewpager2-1.0.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0-rc01] /home/roxy/.gradle/caches/transforms-2/files-2.1/186cf7410ba9292941f5b58b427820ae/viewpager2-1.0.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/0362ff4d8672321347a402c32368f192/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/0362ff4d8672321347a402c32368f192/fragment-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/5276819c062a92c029464122749254f1/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/dbbcc99072b5616db9e0106b8ed65934/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/dbbcc99072b5616db9e0106b8ed65934/activity-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/64ed055c454b36433d45a77285ee24d6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/64ed055c454b36433d45a77285ee24d6/lifecycle-viewmodel-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [com.android.volley:volley:1.1.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/2a1b18e94775767e825674c149e6a721/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [com.android.volley:volley:1.1.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/2a1b18e94775767e825674c149e6a721/jetified-volley-1.1.1/AndroidManifest.xml:7:5-43
+MERGED from [androidx.recyclerview:recyclerview-selection:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/f2c361a5537ee34db639310e78351f96/recyclerview-selection-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview-selection:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/f2c361a5537ee34db639310e78351f96/recyclerview-selection-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a53596bdd308807993a20732db231575/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a53596bdd308807993a20732db231575/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [com.github.lzyzsd:circleprogress:1.2.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/4631d097996978583e51887a663ddd11/circleprogress-1.2.1/AndroidManifest.xml:8:5-10:41
+MERGED from [com.github.lzyzsd:circleprogress:1.2.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/4631d097996978583e51887a663ddd11/circleprogress-1.2.1/AndroidManifest.xml:8:5-10:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-rc01] /home/roxy/.gradle/caches/transforms-2/files-2.1/4bcb6931121568f5b5a1d8f91bdc89ab/coordinatorlayout-1.1.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0-rc01] /home/roxy/.gradle/caches/transforms-2/files-2.1/4bcb6931121568f5b5a1d8f91bdc89ab/coordinatorlayout-1.1.0-rc01/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e95d1611d40c652e0f77a7c95d74a3f6/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.2.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e95d1611d40c652e0f77a7c95d74a3f6/transition-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/ddf6a25e6e3e5e2af441269b48288beb/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/ddf6a25e6e3e5e2af441269b48288beb/appcompat-resources-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/d1ca7cd3905794bed09cb92934ccd6c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/d1ca7cd3905794bed09cb92934ccd6c2/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4276267baf989d651cf25177c247ad49/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4276267baf989d651cf25177c247ad49/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/00bc847ce5b9e3ce7b40d465bffbf9e9/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.drawerlayout:drawerlayout:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/00bc847ce5b9e3ce7b40d465bffbf9e9/drawerlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4932f7e67b26f042b51fa62f1aa4816d/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4932f7e67b26f042b51fa62f1aa4816d/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3c457ded457b98b207b4f227d629399/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3c457ded457b98b207b4f227d629399/customview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/86183f609071467cbb11786cc9cbb026/lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-service:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/86183f609071467cbb11786cc9cbb026/lifecycle-service-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/ffa46f3d6480310395b7b525cf59ccde/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/ffa46f3d6480310395b7b525cf59ccde/lifecycle-runtime-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/78be57497ca2a8dd090798c529f3e53d/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cardview:cardview:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4fe44ae24daa7cfa2dd483a5d3b65a2f/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4fe44ae24daa7cfa2dd483a5d3b65a2f/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/4201d4fddd555218353508e225243933/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.0.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/4201d4fddd555218353508e225243933/sqlite-framework-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/97ca5fa275069525f960e29c6644a280/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.0.1] /home/roxy/.gradle/caches/transforms-2/files-2.1/97ca5fa275069525f960e29c6644a280/sqlite-2.0.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/720b2290ca550345d3df6fc1b6a7ac3a/lifecycle-livedata-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/720b2290ca550345d3df6fc1b6a7ac3a/lifecycle-livedata-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/11feedb5ce6b3e9b1eb69e2892e42453/lifecycle-livedata-core-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/11feedb5ce6b3e9b1eb69e2892e42453/lifecycle-livedata-core-2.1.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4cee4734b336f81c686d6e7b16dafec9/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/4cee4734b336f81c686d6e7b16dafec9/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3819fb4fef2e012192b32762458ba145/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3819fb4fef2e012192b32762458ba145/savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/fb2fbe77879a57ea0c5dfd6fe59ba874/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/fb2fbe77879a57ea0c5dfd6fe59ba874/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3a992d8307f21a8f15eb649383ba6a6a/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3a992d8307f21a8f15eb649383ba6a6a/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml
+INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml
+		INJECTED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml
+receiver#com.nanowheel.nanoux.nanowheel.Widgets.WidgetBatteryBar
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:38:9-48:20
+	android:label
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:39:13-40
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:38:19-59
+intent-filter#action:name:android.appwidget.action.APPWIDGET_BINDSERVICE+action:name:android.appwidget.action.APPWIDGET_UPDATE
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:40:13-43:29
+action#android.appwidget.action.APPWIDGET_UPDATE
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:41:17-84
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:41:25-81
+action#android.appwidget.action.APPWIDGET_BINDSERVICE
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:42:17-89
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:42:25-86
+meta-data#android.appwidget.provider
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:45:13-47:70
+	android:resource
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:47:17-67
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:46:17-58
+activity#com.nanowheel.nanoux.nanowheel.Widgets.WidgetBatteryBarConfigureActivity
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:50:9-54:20
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:50:19-76
+intent-filter#action:name:android.appwidget.action.APPWIDGET_CONFIGURE
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:51:13-53:29
+action#android.appwidget.action.APPWIDGET_CONFIGURE
+ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:52:17-87
+	android:name
+		ADDED from /home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:52:25-84
+uses-permission#android.permission.ACCESS_NETWORK_STATE
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:23:22-76
+uses-feature#0x00020000
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+	android:glEsVersion
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+uses-library#org.apache.http.legacy
+ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+	android:required
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+	android:name
+		ADDED from [com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:25:9-27:40
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:26:13-74
+activity#com.google.android.gms.common.api.GoogleApiActivity
+ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+	android:exported
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+	android:theme
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+	android:name
+		ADDED from [com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+meta-data#com.google.android.gms.version
+ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+	android:value
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+	android:name
+		ADDED from [com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+provider#androidx.lifecycle.ProcessLifecycleOwnerInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+	android:authorities
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+	android:multiprocess
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+	android:exported
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79

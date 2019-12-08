@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+
+    <data xmlns:android="http://schemas.android.com/apk/res/android">
+        <import type="android.databinding.ObservableArrayList" />
+        <import type="android.view.View" />
+        <import type="com.nanowheel.nanoux.nanowheel.model.OWDevice" />
+        <variable
+            name="owdevice"
+            type="com.nanowheel.nanoux.nanowheel.model.OWDevice"
+            android:layout_height="wrap_content" />
+    </data>-->
+
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:clipChildren="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:tag="SYSTEM_UI_FLAG_LIGHT_NAVIGATION_BAR"
+        android:clipToPadding="false"
+        android:clipChildren="false"
+        tools:ignore="RtlHardcoded">
+
+
+        <!-- Main content -->
+        <FrameLayout
+            android:id="@+id/fragment_container"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginBottom="56dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+
+        </FrameLayout>
+        <!--style="@style/Widget.MaterialComponents.BottomNavigationView"-->
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottom_navigation"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/keyline_4"
+            android:elevation="8dp"
+            app:elevation="8dp"
+            app:menu="@menu/bottom_bar"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <RelativeLayout
+        android:id="@+id/disclaimer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/color_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/disclaimer"
+                android:layout_marginBottom="30dp"
+                android:textSize="25sp"
+                android:textColor="?colorOnSurface"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/disclaimer_text"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="?colorOnSurface"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/onewheel_telemetry"
+                android:textSize="16sp"
+                android:textColor="?colorOnSurface"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/onewheel_telemetry_etc"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="?colorOnSurface"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/phone_hardware"
+                android:textSize="16sp"
+                android:layout_marginBottom="10dp"
+                android:textColor="?colorOnSurface"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/bluetooth_location"
+                android:textSize="16sp"
+                android:layout_marginBottom="30dp"
+                android:textColor="?colorOnSurface"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/disclaimer_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accept"/>
+
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/pint_disclaimer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone">
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:src="@color/color_background"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical"
+            android:layout_margin="40dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pint_disclaimer"
+                android:layout_marginBottom="30dp"
+                android:textSize="25sp"
+                android:textColor="?colorOnSurface"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/pint_disclaimer_text"
+                android:textSize="16sp"
+                android:layout_marginBottom="30dp"
+                android:textColor="?colorOnSurface"/>
+
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/pint_disclaimer_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/accept"/>
+
+
+
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</RelativeLayout>
+<!--</layout>-->

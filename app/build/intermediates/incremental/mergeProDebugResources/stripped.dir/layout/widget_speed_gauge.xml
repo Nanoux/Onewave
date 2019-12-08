@@ -1,0 +1,43 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/speedGauge"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+
+
+    <ImageView
+        android:id="@+id/speedGaugeBackW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@android:color/white" />
+
+    <TextView
+        android:id="@+id/speedTextW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentTop="true"
+        android:textColor="@color/color_on_surface"
+        android:text="0"
+        android:textSize="40dp"
+        android:autoSizeTextType="uniform"
+        android:autoSizeMaxTextSize="9001dp"
+        android:autoSizeStepGranularity="2dp"/>
+
+    <TextView
+        android:id="@+id/speedUnitTextW"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:textColor="@color/color_on_surface"
+        android:text="@string/mph"
+        android:textSize="12dp"/>
+
+</RelativeLayout>

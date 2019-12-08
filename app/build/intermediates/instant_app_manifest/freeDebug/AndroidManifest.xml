@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nanowheel.nanoux.nanowheel.bugger"
+    android:targetSandboxVersion="2"
+    android:versionCode="33"
+    android:versionName="2.1-free" >
+
+    <uses-sdk
+        android:minSdkVersion="21"
+        android:targetSdkVersion="29" />
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> <!-- Include required permissions for Google Maps API to run. -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+
+    <application
+        android:allowBackup="true"
+        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+        android:debuggable="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme.DayNight" >
+        <activity
+            android:name="com.nanowheel.nanoux.nanowheel.SplashActivity"
+            android:theme="@style/MyTheme.DayNight" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.nanowheel.nanoux.nanowheel.MainActivity"
+            android:theme="@style/MyTheme.DayNight" >
+        </activity>
+
+        <receiver
+            android:name="com.nanowheel.nanoux.nanowheel.Widgets.WidgetBatteryBar"
+            android:label="Battery Bar" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_BINDSERVICE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_battery_circle_info" />
+        </receiver>
+
+        <activity android:name="com.nanowheel.nanoux.nanowheel.Widgets.WidgetBatteryBarConfigureActivity" >
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name="com.nanowheel.nanoux.nanowheel.util.BluetoothService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name="com.nanowheel.nanoux.nanowheel.util.BroadcastReciever" >
+            <intent-filter>
+                <action android:name="com.nanowheel.nanoux.nanowheel.BLUETOOTH_CANCEL" />
+                <action android:name="com.nanowheel.nanoux.nanowheel.LIGHTS" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="com.nanowheel.nanoux.nanowheel.BubbleActivity"
+            android:allowEmbedded="true"
+            android:documentLaunchMode="always"
+            android:resizeableActivity="true" >
+        </activity> <!-- Needs to be explicitly declared on P+ -->
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <service
+            android:name="androidx.room.MultiInstanceInvalidationService"
+            android:exported="false" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+
+        <provider
+            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+            android:authorities="com.nanowheel.nanoux.nanowheel.bugger.lifecycle-process"
+            android:exported="false"
+            android:multiprocess="true" />
+    </application>
+
+</manifest>

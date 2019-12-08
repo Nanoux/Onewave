@@ -1,0 +1,782 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data >
+        <import type="androidx.databinding.ObservableArrayList" />
+        <import type="android.view.View" />
+        <import type="com.nanowheel.nanoux.nanowheel.model.OWDevice" />
+        <variable
+            name="owdevice"
+            type="com.nanowheel.nanoux.nanowheel.model.OWDevice"
+            android:layout_height="wrap_content" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.core.widget.NestedScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <!-- Board Name -->
+                <!--
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Board Name"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicUNKNOWN2).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+                -->
+
+                <!-- Speed Stats -->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="10dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/speed"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.MockOnewheelCharacteristicSpeed).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/motor_rpm"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicSpeedRpm).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/speed_record"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:id="@+id/speed_record"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:src="@color/color_divider">
+                </ImageView>
+
+                <!-- Trip Stats -->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/trip_distance"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.MockOnewheelCharacteristicOdometer).value != null ? String.format(&quot;%3.4s&quot;,owdevice.characteristics.get(owdevice.MockOnewheelCharacteristicOdometer).value) : &quot; &quot;}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/record_trip_distance"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:id="@+id/distance_record"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/total_distance"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:id="@+id/distance_total"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:src="@color/color_divider">
+                </ImageView>
+
+                <!-- Battery Stats -->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/battery_percentage"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicBatteryRemaining).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/battery_voltage"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicBatteryVoltage).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/battery_amps"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicCurrentAmps).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:src="@color/color_divider">
+                </ImageView>
+
+                <!-- rotation stats -->
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:id="@+id/pitch"
+                        android:layout_width="50dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="70dp"
+                        app:srcCompat="@drawable/apppitch"
+                        android:tint="?attr/colorAccent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/pitch"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:id="@+id/pitch_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:id="@+id/roll"
+                        android:layout_width="25dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="82dp"
+                        app:srcCompat="@drawable/approll"
+                        android:tint="?attr/colorAccent"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/roll"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:id="@+id/roll_text"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="0"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="50dp">
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="25dp"
+                        app:srcCompat="@drawable/appsensor"
+                        android:tint="?colorOnSurface"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="25dp"
+                        app:srcCompat="@drawable/appsensor1"
+                        android:tint="?attr/colorAccent"
+                        android:visibility="@{owdevice.characteristics.get(owdevice.MockOnewheelCharacteristicPad1).value == &quot;true&quot; ? View.VISIBLE : View.INVISIBLE}"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="25dp"
+                        app:srcCompat="@drawable/appsensor2"
+                        android:tint="?attr/colorAccent"
+                        android:visibility="@{owdevice.characteristics.get(owdevice.MockOnewheelCharacteristicPad2).value == &quot;true&quot; ? View.VISIBLE : View.INVISIBLE}"/>
+
+                    <ImageView
+                        android:layout_width="50dp"
+                        android:layout_height="25dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginEnd="25dp"
+                        app:srcCompat="@drawable/appsensor3"
+                        android:tint="?attr/colorAccent"
+                        android:visibility="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicStatusError).value == &quot;true&quot; ? View.VISIBLE : View.INVISIBLE}"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/footpads"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                </RelativeLayout>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:src="@color/color_divider">
+                </ImageView>
+
+
+                <!-- Current Stats -->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/watt_usage"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{ (owdevice.characteristics.get(owdevice.OnewheelCharacteristicBatteryVoltage).value == null) || (owdevice.characteristics.get(owdevice.OnewheelCharacteristicCurrentAmps).value == null) ? &quot; &quot; : String.format(&quot;%3.4s&quot;,Float.parseFloat(owdevice.characteristics.get(owdevice.OnewheelCharacteristicBatteryVoltage).value) * Float.parseFloat(owdevice.characteristics.get(owdevice.OnewheelCharacteristicCurrentAmps).value))}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/amps_used"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicTripTotalAmpHours).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/amps_generated"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicTripRegenAmpHours).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:src="@color/color_divider">
+                </ImageView>
+
+                <!-- Voltage Stats -->
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="100dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/cell_voltages"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicBatteryCells).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:src="@color/color_divider">
+                </ImageView>
+                <!-- Temperature Stats -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/controller_temperature"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicTemperature).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/motor_temperature"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.MockOnewheelCharacteristicMotorTemp).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/battery_temperature"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicBatteryTemp).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:src="@color/color_divider">
+                </ImageView>
+
+                <!-- Hardware Stats -->
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/hardware_revision"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicHardwareRevision).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp"
+                    android:layout_marginBottom="50dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/software_revision"
+                        android:textSize="16sp"
+                        android:textColor="?colorOnSurface"
+                        android:gravity="center"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="70dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@{owdevice.characteristics.get(owdevice.OnewheelCharacteristicFirmwareRevision).value}"
+                        android:textSize="16sp"
+                        android:textColor="?attr/colorAccent"
+                        android:gravity="center"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="25dp" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </androidx.core.widget.NestedScrollView>
+    </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/refresh_button"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentBottom="true"
+            android:layout_marginBottom="10dp"
+            android:elevation="16dp"
+            android:textSize="10dp"
+            android:text="@string/refresh"/>
+
+    </RelativeLayout>
+</layout>
+

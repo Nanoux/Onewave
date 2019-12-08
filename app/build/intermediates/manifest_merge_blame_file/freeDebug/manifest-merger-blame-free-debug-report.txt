@@ -1,0 +1,204 @@
+1<?xml version="1.0" encoding="utf-8"?>
+2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+3    package="com.nanowheel.nanoux.nanowheel.bugger"
+4    android:versionCode="33"
+5    android:versionName="2.1-free" >
+6
+7    <uses-sdk
+8        android:minSdkVersion="21"
+9        android:targetSdkVersion="29" />
+10
+11    <uses-feature
+11-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:6:5-8:35
+12        android:name="android.hardware.bluetooth_le"
+12-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:7:9-53
+13        android:required="true" />
+13-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:8:9-32
+14
+15    <uses-permission android:name="android.permission.BLUETOOTH" />
+15-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:10:5-68
+15-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:10:22-65
+16    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+16-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:11:5-74
+16-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:11:22-71
+17    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+17-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:12:5-81
+17-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:12:22-78
+18    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+18-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:13:5-79
+18-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:13:22-76
+19    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+19-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:15:5-77
+19-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:15:22-74
+20    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+20-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:14:5-85
+20-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:14:22-82
+21    <uses-permission android:name="android.permission.INTERNET" />
+21-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:16:5-67
+21-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:16:22-64
+22    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" /> <!-- Include required permissions for Google Maps API to run. -->
+22-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:17:5-79
+22-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:17:22-76
+23    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+23-->[com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:23:5-79
+23-->[com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:23:22-76
+24
+25    <uses-feature
+25-->[com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:26:5-28:35
+26        android:glEsVersion="0x00020000"
+26-->[com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:27:9-41
+27        android:required="true" />
+27-->[com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:28:9-32
+28
+29    <application
+29-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:19:5-49:19
+30        android:allowBackup="true"
+30-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:20:9-35
+31        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+31-->[androidx.core:core:1.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/e9dab9c67c1ee3668e0bbf86c6d8cbd8/core-1.1.0/AndroidManifest.xml:24:18-86
+32        android:debuggable="true"
+33        android:icon="@mipmap/ic_launcher"
+33-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:18:9-43
+34        android:label="@string/app_name"
+34-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:21:9-41
+35        android:roundIcon="@mipmap/ic_launcher_round"
+35-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:20:9-54
+36        android:supportsRtl="true"
+36-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:22:9-35
+37        android:theme="@style/MyTheme.DayNight" >
+37-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:23:9-48
+38        <activity
+38-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:30:9-36:20
+39            android:name="com.nanowheel.nanoux.nanowheel.SplashActivity"
+39-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:30:19-49
+40            android:theme="@style/MyTheme.DayNight" >
+40-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:26:13-52
+41            <intent-filter>
+41-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:31:13-35:29
+42                <action android:name="android.intent.action.MAIN" />
+42-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:32:17-69
+42-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:32:25-66
+43
+44                <category android:name="android.intent.category.LAUNCHER" />
+44-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:34:17-77
+44-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:34:27-74
+45            </intent-filter>
+46        </activity>
+47        <activity
+47-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:37:9-59
+48            android:name="com.nanowheel.nanoux.nanowheel.MainActivity"
+48-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:37:19-47
+49            android:theme="@style/MyTheme.DayNight" >
+49-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:34:13-52
+50        </activity>
+51
+52        <receiver
+52-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:38:9-48:20
+53            android:name="com.nanowheel.nanoux.nanowheel.Widgets.WidgetBatteryBar"
+53-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:38:19-59
+54            android:label="Battery Bar" >
+54-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:39:13-40
+55            <intent-filter>
+55-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:40:13-43:29
+56                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+56-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:41:17-84
+56-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:41:25-81
+57                <action android:name="android.appwidget.action.APPWIDGET_BINDSERVICE" />
+57-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:42:17-89
+57-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:42:25-86
+58            </intent-filter>
+59
+60            <meta-data
+60-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:45:13-47:70
+61                android:name="android.appwidget.provider"
+61-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:46:17-58
+62                android:resource="@xml/widget_battery_circle_info" />
+62-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:47:17-67
+63        </receiver>
+64
+65        <activity android:name="com.nanowheel.nanoux.nanowheel.Widgets.WidgetBatteryBarConfigureActivity" >
+65-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:50:9-54:20
+65-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:50:19-76
+66            <intent-filter>
+66-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:51:13-53:29
+67                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+67-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:52:17-87
+67-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/free/AndroidManifest.xml:52:25-84
+68            </intent-filter>
+69        </activity>
+70
+71        <service
+71-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:39:9-41:72
+72            android:name="com.nanowheel.nanoux.nanowheel.util.BluetoothService"
+72-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:40:13-50
+73            android:permission="android.permission.BIND_JOB_SERVICE" />
+73-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:41:13-69
+74
+75        <receiver android:name="com.nanowheel.nanoux.nanowheel.util.BroadcastReciever" >
+75-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:43:9-48:20
+75-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:43:19-57
+76            <intent-filter>
+76-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:44:13-47:29
+77                <action android:name="com.nanowheel.nanoux.nanowheel.BLUETOOTH_CANCEL" />
+77-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:45:17-90
+77-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:45:25-87
+78                <action android:name="com.nanowheel.nanoux.nanowheel.LIGHTS" />
+78-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:46:17-80
+78-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:46:25-77
+79            </intent-filter>
+80        </receiver>
+81
+82        <activity
+82-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:25:9-29:20
+83            android:name="com.nanowheel.nanoux.nanowheel.BubbleActivity"
+83-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:25:19-49
+84            android:allowEmbedded="true"
+84-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:26:13-41
+85            android:documentLaunchMode="always"
+85-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:27:13-48
+86            android:resizeableActivity="true" >
+86-->/home/roxy/Desktop/Onewave/Nanowheel/app/src/main/AndroidManifest.xml:28:13-46
+87        </activity> <!-- Needs to be explicitly declared on P+ -->
+88        <uses-library
+88-->[com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:33:9-35:40
+89            android:name="org.apache.http.legacy"
+89-->[com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:34:13-50
+90            android:required="false" />
+90-->[com.google.android.gms:play-services-maps:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/a3d702a77cbfacefb23de82416a0cb1f/play-services-maps-17.0.0/AndroidManifest.xml:35:13-37
+91
+92        <service
+92-->[androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:25:9-27:40
+93            android:name="androidx.room.MultiInstanceInvalidationService"
+93-->[androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:26:13-74
+94            android:exported="false" />
+94-->[androidx.room:room-runtime:2.2.2] /home/roxy/.gradle/caches/transforms-2/files-2.1/16bae69b8e7536ae1a363b2679cefb07/room-runtime-2.2.2/AndroidManifest.xml:27:13-37
+95
+96        <activity
+96-->[com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:23:9-26:75
+97            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+97-->[com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:24:13-79
+98            android:exported="false"
+98-->[com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:25:13-37
+99            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+99-->[com.google.android.gms:play-services-base:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/77c2fc448e2bd0738fd67dce062b1efd/play-services-base-17.0.0/AndroidManifest.xml:26:13-72
+100
+101        <meta-data
+101-->[com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:23:9-25:69
+102            android:name="com.google.android.gms.version"
+102-->[com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:24:13-58
+103            android:value="@integer/google_play_services_version" />
+103-->[com.google.android.gms:play-services-basement:17.0.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/1c67a72b61f820459eecbd47b38f21e7/jetified-play-services-basement-17.0.0/AndroidManifest.xml:25:13-66
+104
+105        <provider
+105-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:23:9-27:43
+106            android:name="androidx.lifecycle.ProcessLifecycleOwnerInitializer"
+106-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:24:13-79
+107            android:authorities="com.nanowheel.nanoux.nanowheel.bugger.lifecycle-process"
+107-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:25:13-69
+108            android:exported="false"
+108-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:26:13-37
+109            android:multiprocess="true" />
+109-->[androidx.lifecycle:lifecycle-process:2.1.0] /home/roxy/.gradle/caches/transforms-2/files-2.1/3c03e0805bdfd6180afbf0af0c9cd9a0/lifecycle-process-2.1.0/AndroidManifest.xml:27:13-40
+110    </application>
+111
+112</manifest>

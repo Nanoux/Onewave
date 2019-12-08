@@ -1,0 +1,19 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/roxy/Documents/Android Studio Projects/Onewave/Nanowheel/app/build/intermediates/incremental/mergeProDebugResources/merged.dir/values-sw360dp-v13/values-sw360dp-v13.xml",
+            "map": [
+                {
+                    "source": "/home/roxy/.gradle/caches/transforms-2/files-2.1/1c9808e429abf680ccd4a9858ea887b5/preference-1.1.0/res/values-sw360dp-v13/values-sw360dp-v13.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "71",
+                        "endOffsets": "122"
+                    }
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nanowheel.nanoux.nanowheel">
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme.DayNight"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".SplashActivity"
+            android:theme="@style/MyTheme.DayNight">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/MyTheme.DayNight">
+
+        </activity>
+
+        <receiver android:name=".Widgets.WidgetBatteryBar"
+            android:label="Battery Bar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_BINDSERVICE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_battery_circle_info" />
+        </receiver>
+
+        <activity android:name=".Widgets.WidgetBatteryBarConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <service android:name="com.nanowheel.nanoux.nanowheel.util.BluetoothService"
+            android:permission="android.permission.BIND_JOB_SERVICE"/>
+
+        <receiver android:name="com.nanowheel.nanoux.nanowheel.util.BroadcastReciever">
+            <intent-filter>
+                <action android:name="com.nanowheel.nanoux.nanowheel.BLUETOOTH_CANCEL" />
+                <action android:name="com.nanowheel.nanoux.nanowheel.LIGHTS" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+
+</manifest>

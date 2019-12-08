@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<appwidget-provider xmlns:android="http://schemas.android.com/apk/res/android"
+    android:configure="com.nanowheel.nanoux.nanowheel.Widgets.WidgetRangeGaugeConfigureActivity"
+    android:initialKeyguardLayout="@layout/widget_range_gauge"
+    android:initialLayout="@layout/widget_range_gauge"
+    android:minWidth="40dp"
+    android:minHeight="40dp"
+    android:previewImage="@drawable/range_gauge_preview"
+    android:resizeMode="horizontal|vertical"
+    android:updatePeriodMillis="0"
+    android:widgetCategory="home_screen|keyguard"></appwidget-provider>

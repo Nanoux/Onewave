@@ -1,0 +1,20 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/nanoux/androidStudioProjects/Nanowheel/Nanowheel/app/build/intermediates/incremental/mergeProReleaseResources/merged.dir/values-watch-v20/values-watch-v20.xml",
+            "map": [
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/4b24354f419efcdea201153591da089b/appcompat-1.1.0-beta01/res/values-watch-v20/values-watch-v20.xml",
+                    "from": {
+                        "startLines": "2,5,8",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,214,385",
+                        "endLines": "4,7,10",
+                        "endColumns": "12,12,12",
+                        "endOffsets": "209,380,553"
+                    }
+                }
+            ]
+        }
+    ]
+}

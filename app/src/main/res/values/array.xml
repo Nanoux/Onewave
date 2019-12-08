@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="AppTheme">
+        <item>Light Theme</item>
+        <item>Dark Theme</item>
+        <item>Battery Saver</item>
+    </string-array>
+
+    <string-array name="AppThemeValue">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+    </string-array>
+
+    <string-array name="RegenWarn">
+        <item>99%</item>
+        <item>98%</item>
+        <item>97%</item>
+        <item>96%</item>
+        <item>95%</item>
+    </string-array>
+
+    <string-array name="RegenWarnValue">
+        <item>99%</item>
+        <item>98%</item>
+        <item>97%</item>
+        <item>96%</item>
+        <item>95%</item>
+    </string-array>
+
+    <string-array name="TurnWarn">
+        <item>50%</item>
+        <item>51%</item>
+        <item>52%</item>
+        <item>53%</item>
+        <item>54%</item>
+        <item>55%</item>
+    </string-array>
+
+    <string-array name="TurnWarnValue">
+        <item>50%</item>
+        <item>51%</item>
+        <item>52%</item>
+        <item>53%</item>
+        <item>54%</item>
+        <item>55%</item>
+    </string-array>
+
+    <string-array name="BattWarn1">
+        <item>5%</item>
+        <item>10%</item>
+        <item>15%</item>
+        <item>20%</item>
+        <item>25%</item>
+    </string-array>
+
+    <string-array name="BattWarnValue1">
+        <item>5%</item>
+        <item>10%</item>
+        <item>15%</item>
+        <item>20%</item>
+        <item>25%</item>
+    </string-array>
+
+    <string-array name="BattWarn2">
+        <item>5%</item>
+        <item>10%</item>
+        <item>15%</item>
+        <item>20%</item>
+        <item>25%</item>
+    </string-array>
+
+    <string-array name="BattWarnValue2">
+        <item>5%</item>
+        <item>10%</item>
+        <item>15%</item>
+        <item>20%</item>
+        <item>25%</item>
+    </string-array>
+
+    <string-array name="SpeedWarn">
+        <item>30 k/h | 18.6 m/h</item>
+        <item>26 k/h | 16.2 m/h</item>
+        <item>22 k/h | 13.6 m/h</item>
+        <item>18 k/h | 11.2 m/h</item>
+        <item>14 k/h | 8.6 m/h</item>
+        <item>10 k/h | 6.2 m/h</item>
+    </string-array>
+
+    <string-array name="SpeedWarnValue">
+        <item>563</item>
+        <item>488</item>
+        <item>413</item>
+        <item>338</item>
+        <item>263</item>
+        <item>188</item>
+    </string-array>
+
+    <string-array name="SpeedWarn2">
+        <item>30 k/h | 18.6 m/h</item>
+        <item>26 k/h | 16.2 m/h</item>
+        <item>22 k/h | 13.6 m/h</item>
+        <item>18 k/h | 11.2 m/h</item>
+        <item>14 k/h | 8.6 m/h</item>
+        <item>10 k/h | 6.2 m/h</item>
+    </string-array>
+
+    <string-array name="SpeedWarnValue2">
+        <item>563</item>
+        <item>488</item>
+        <item>413</item>
+        <item>338</item>
+        <item>263</item>
+        <item>188</item>
+    </string-array>
+
+    <string-array name="ChargeWarn">
+        <item>100%</item>
+        <item>99%</item>
+        <item>98%</item>
+        <item>97%</item>
+        <item>96%</item>
+        <item>95%</item>
+    </string-array>
+
+    <string-array name="ChargeWarnValue">
+        <item>100%</item>
+        <item>99%</item>
+        <item>98%</item>
+        <item>97%</item>
+        <item>96%</item>
+        <item>95%</item>
+    </string-array>
+
+    <string-array name="MethodBattery">
+        <item>Default</item>
+        <item>Output Voltage</item>
+        <item>Cell Voltages</item>
+        <item>Fully Charged Two-X</item>
+    </string-array>
+
+    <string-array name="MethodBatteryValue">
+        <item>batteryDefault</item>
+        <item>batteryVoltage</item>
+        <item>batteryCells</item>
+        <item>batteryTwoX</item>
+    </string-array>
+
+</resources>

@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nanowheel.nanoux.nanowheel">
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher_dark"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_dark_round"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme.DayNight"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity
+            android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".MainActivity"></activity>
+
+        <receiver
+            android:name=".Widgets.WidgetBatteryBar"
+            android:label="Battery Bar">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+                <action android:name="android.appwidget.action.APPWIDGET_BINDSERVICE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_battery_circle_info" />
+        </receiver>
+
+        <activity android:name=".Widgets.WidgetBatteryBarConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <service
+            android:name=".util.BluetoothService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name=".util.BroadcastReciever">
+            <intent-filter>
+                <action android:name="com.nanowheel.nanoux.nanowheel.BLUETOOTH_CANCEL" />
+                <action android:name="com.nanowheel.nanoux.nanowheel.LIGHTS" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name=".Widgets.WidgetSpeedGauge"
+            android:label="Speed Gauge">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_speed_gauge_info" />
+        </receiver>
+
+        <activity android:name=".Widgets.WidgetSpeedGaugeConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".Widgets.WidgetRangeGauge"
+            android:label="Range Gauge">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_range_gauge_info" />
+        </receiver>
+
+        <activity android:name=".Widgets.WidgetRangeGaugeConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+
+        <receiver
+            android:name=".Widgets.WidgetVoltageGauge"
+            android:label="Voltage Gauge">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_voltage_gauge_info" />
+        </receiver>
+
+        <activity android:name=".Widgets.WidgetVoltageGaugeConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+        <!--
+             The API key for Google Maps-based APIs is defined as a string resource.
+             (See the file "res/values/google_maps_api.xml").
+             Note that the API key is linked to the encryption key used to sign the APK.
+             You need a different API key for each encryption key, including the release key that is used to
+             sign the APK for publishing.
+             You can define the keys for the debug and release targets in src/debug/ and src/release/.
+        -->
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="@string/api_key" />
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <receiver android:name=".Widgets.WidgetLogToggle"
+            android:label="Log Trips Toggle">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/widget_log_toggle_info" />
+        </receiver>
+
+        <activity android:name=".Widgets.WidgetLogToggleConfigureActivity">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_CONFIGURE" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

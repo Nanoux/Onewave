@@ -1,0 +1,37 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/logTog"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="4dp">
+
+
+    <ImageView
+        android:id="@+id/logTogBackW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:src="@android:color/white" />
+
+    <ImageButton
+        android:id="@+id/logTogButtonW"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="20dp"
+        android:src="@drawable/ic_box"
+        android:background="@android:color/transparent"/>
+
+    <TextView
+        android:id="@+id/logTogTextW"
+        android:layout_width="match_parent"
+        android:layout_height="18dp"
+        android:gravity="center"
+        android:layout_centerVertical="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="2dp"
+        android:textColor="@color/color_primary"
+        android:text="@string/log_trips"
+        android:textSize="12dp"/>
+
+</RelativeLayout>

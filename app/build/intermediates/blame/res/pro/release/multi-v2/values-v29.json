@@ -1,0 +1,28 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/nanoux/androidStudioProjects/Nanowheel/Nanowheel/app/build/intermediates/incremental/mergeProReleaseResources/merged.dir/values-v29/values-v29.xml",
+            "map": [
+                {
+                    "source": "/home/nanoux/androidStudioProjects/Nanowheel/Nanowheel/app/src/main/res/values-v29/array.xml",
+                    "from": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "56",
+                        "endLines": "7",
+                        "endColumns": "19",
+                        "endOffsets": "207"
+                    },
+                    "to": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "6",
+                        "endColumns": "19",
+                        "endOffsets": "206"
+                    }
+                }
+            ]
+        }
+    ]
+}

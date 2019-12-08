@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/nanoux/androidStudioProjects/Nanowheel/Nanowheel/app/build/intermediates/incremental/mergeProReleaseResources/merged.dir/values-land/values-land.xml",
+            "map": [
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/4b24354f419efcdea201153591da089b/appcompat-1.1.0-beta01/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4",
+                        "startColumns": "4,4,4",
+                        "startOffsets": "55,125,196",
+                        "endColumns": "69,70,67",
+                        "endOffsets": "120,191,259"
+                    }
+                },
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/cc1212080319d7a6fbf3828c87821722/material-1.1.0-alpha07/res/values-land/values-land.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "55,128,198,270,340",
+                        "endLines": "2,3,4,5,9",
+                        "endColumns": "72,69,71,69,10",
+                        "endOffsets": "123,193,265,335,507"
+                    },
+                    "to": {
+                        "startLines": "5,6,7,8,9",
+                        "startColumns": "4,4,4,4,4",
+                        "startOffsets": "264,337,407,479,549",
+                        "endLines": "5,6,7,8,12",
+                        "endColumns": "72,69,71,69,10",
+                        "endOffsets": "332,402,474,544,716"
+                    }
+                }
+            ]
+        }
+    ]
+}

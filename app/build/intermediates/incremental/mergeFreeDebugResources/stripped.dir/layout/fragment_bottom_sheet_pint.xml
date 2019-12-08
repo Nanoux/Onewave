@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp"
+    android:background="?colorSurface">
+
+    <!-- NOTE: This list should be displayed in a list
+    instead of nested layouts -->
+
+    <LinearLayout
+        android:id="@+id/sheet_redwood"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="@dimen/mtrl_card_spacing"
+        android:paddingRight="@dimen/mtrl_card_spacing"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/redwood"
+            android:textColor="?colorOnSurface"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sheet_pacific"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="@dimen/mtrl_card_spacing"
+        android:paddingRight="@dimen/mtrl_card_spacing"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/pacific"
+            android:textColor="?colorOnSurface"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sheet_elevated"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="@dimen/mtrl_card_spacing"
+        android:paddingRight="@dimen/mtrl_card_spacing"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/elevated"
+            android:textColor="?colorOnSurface"
+            android:textSize="20sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/sheet_skyline"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:clickable="true"
+        android:focusable="true"
+        android:orientation="horizontal"
+        android:paddingBottom="8dp"
+        android:paddingLeft="@dimen/mtrl_card_spacing"
+        android:paddingRight="@dimen/mtrl_card_spacing"
+        android:paddingTop="8dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:text="@string/skyline"
+            android:textColor="?colorOnSurface"
+            android:textSize="20sp" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.nanowheel.nanoux.nanowheel">
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="true" />
+
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_BACKGROUND_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+
+    <application
+        android:allowBackup="true"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/MyTheme.DayNight"
+        tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".BubbleActivity"
+            android:allowEmbedded="true"
+            android:documentLaunchMode="always"
+            android:resizeableActivity="true">
+        </activity>
+        <activity android:name=".SplashActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".MainActivity"></activity>
+
+        <service
+            android:name=".util.BluetoothService"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <receiver android:name=".util.BroadcastReciever">
+            <intent-filter>
+                <action android:name="com.nanowheel.nanoux.nanowheel.BLUETOOTH_CANCEL" />
+                <action android:name="com.nanowheel.nanoux.nanowheel.LIGHTS" />
+            </intent-filter>
+        </receiver>
+    </application>
+
+</manifest>

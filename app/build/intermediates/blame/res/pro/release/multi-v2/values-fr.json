@@ -1,0 +1,94 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/nanoux/androidStudioProjects/Nanowheel/Nanowheel/app/build/intermediates/incremental/mergeProReleaseResources/merged.dir/values-fr/values-fr.xml",
+            "map": [
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/66cd3f428e59d48a2a19f25fa8be8007/core-1.1.0-rc01/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "100",
+                        "endOffsets": "151"
+                    },
+                    "to": {
+                        "startLines": "49",
+                        "startColumns": "4",
+                        "startOffsets": "5923",
+                        "endColumns": "100",
+                        "endOffsets": "6019"
+                    }
+                },
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/90f4a702487417351a285a73e1e35e7b/play-services-base-17.0.0/res/values-fr/values.xml",
+                    "from": {
+                        "startLines": "4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20",
+                        "startColumns": "0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0",
+                        "startOffsets": "245,349,561,689,796,1026,1157,1304,1442,1679,1789,2005,2139,2358,2563,2662,2755",
+                        "endColumns": "103,211,127,106,229,130,146,137,236,109,215,133,218,204,98,92,108",
+                        "endOffsets": "348,560,688,795,1025,1156,1303,1441,1678,1788,2004,2138,2357,2562,2661,2754,2863"
+                    },
+                    "to": {
+                        "startLines": "29,30,31,32,33,34,35,36,38,39,40,41,42,43,44,45,46",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "2847,2955,3167,3299,3410,3640,3775,3926,4292,4529,4643,4859,4997,5216,5425,5528,5625",
+                        "endColumns": "107,211,131,110,229,134,150,141,236,113,215,137,218,208,102,96,112",
+                        "endOffsets": "2950,3162,3294,3405,3635,3770,3921,4063,4524,4638,4854,4992,5211,5420,5523,5620,5733"
+                    }
+                },
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/ae61e6e42afe514be894ce990465e8bf/preference-1.0.0/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "105,204,373,459",
+                        "endColumns": "98,168,85,79",
+                        "endOffsets": "199,368,454,534"
+                    },
+                    "to": {
+                        "startLines": "47,50,51,52",
+                        "startColumns": "4,4,4,4",
+                        "startOffsets": "5738,6024,6193,6279",
+                        "endColumns": "98,168,85,79",
+                        "endOffsets": "5832,6188,6274,6354"
+                    }
+                },
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/40a9b50b78db552c407e53fcee92f373/jetified-play-services-basement-17.0.0/res/values-fr/values.xml",
+                    "from": {
+                        "startLines": "4",
+                        "startColumns": "0",
+                        "startOffsets": "247",
+                        "endColumns": "223",
+                        "endOffsets": "470"
+                    },
+                    "to": {
+                        "startLines": "37",
+                        "startColumns": "4",
+                        "startOffsets": "4068",
+                        "endColumns": "223",
+                        "endOffsets": "4287"
+                    }
+                },
+                {
+                    "source": "/home/nanoux/.gradle/caches/transforms-2/files-2.1/4b24354f419efcdea201153591da089b/appcompat-1.1.0-beta01/res/values-fr/values-fr.xml",
+                    "from": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,216,331,441,523,629,759,837,914,1005,1097,1195,1290,1391,1484,1577,1672,1763,1854,1939,2049,2160,2263,2374,2482,2589,2748,2847",
+                        "endColumns": "110,114,109,81,105,129,77,76,90,91,97,94,100,92,92,94,90,90,84,109,110,102,110,107,106,158,98,85",
+                        "endOffsets": "211,326,436,518,624,754,832,909,1000,1092,1190,1285,1386,1479,1572,1667,1758,1849,1934,2044,2155,2258,2369,2477,2584,2743,2842,2928"
+                    },
+                    "to": {
+                        "startLines": "2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,48",
+                        "startColumns": "4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4,4",
+                        "startOffsets": "105,216,331,441,523,629,759,837,914,1005,1097,1195,1290,1391,1484,1577,1672,1763,1854,1939,2049,2160,2263,2374,2482,2589,2748,5837",
+                        "endColumns": "110,114,109,81,105,129,77,76,90,91,97,94,100,92,92,94,90,90,84,109,110,102,110,107,106,158,98,85",
+                        "endOffsets": "211,326,436,518,624,754,832,909,1000,1092,1190,1285,1386,1479,1572,1667,1758,1849,1934,2044,2155,2258,2369,2477,2584,2743,2842,5918"
+                    }
+                }
+            ]
+        }
+    ]
+}

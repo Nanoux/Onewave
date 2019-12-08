@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <bool name="config_materialPreferenceIconSpaceReserved">true</bool>
+    <dimen name="mtrl_calendar_day_size">40dp</dimen>
+    <dimen name="mtrl_calendar_day_size_corner">20dp</dimen>
+    <dimen name="preference_category_padding_start">56dp</dimen>
+</resources>

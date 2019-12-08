@@ -1,0 +1,84 @@
+<resources>
+
+    <string name="item1">Onewave</string>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+    <string name="channel_name">Board Status Service</string>
+    <string name="channel_description">Service notification that displays board status when connected.</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="disclaimer">Disclaimer</string>
+    <string name="disclaimer_text">This app collects data from your phone and Onewheel in order to display and analyze it. The data never leaves this phone or even this app unless the user does so themselves. Data collected includes:</string>
+    <string name="onewheel_telemetry">Onewheel Telemetry</string>
+    <string name="onewheel_telemetry_etc">(Speed, Mileage, Bluetooth Adresses, Etc.)</string>
+    <string name="phone_hardware">Phone Settings &amp; Hardware Data</string>
+    <string name="bluetooth_location">Location, for Bluetooth Connection</string>
+    <string name="accept">Accept</string>
+    <string name="pint_disclaimer">OW Pint Disclaimer</string>
+    <string name="pint_disclaimer_text">This app is totally untested on the new Pint boards, and will be for a while until I get one. This app may work, it may not. Please report any bugs/crashes and I\'ll do my best to fix them!</string>
+
+    <string name="custom_shaping">Custom Shaping</string>
+    <string name="carveability">Carveability (Roll Stability)</string>
+    <string name="value">value</string>
+    <string name="loose">loose</string>
+    <string name="tight">tight</string>
+    <string name="stance">Stance (Nose Pitch)</string>
+    <string name="stance_low">-1.0</string>
+    <string name="stance_high">3.0</string>
+    <string name="aggressiveness">Aggressiveness (Responsiveness)</string>
+    <string name="slow">slow</string>
+    <string name="fast">fast</string>
+
+    <string name="trip">Trip</string>
+    <string name="charge">Charge</string>
+    <string name="range">Range</string>
+    <string name="total">Total</string>
+
+    <string name="classic">Classic</string>
+    <string name="extreme">Extreme</string>
+    <string name="elevated">Elevated</string>
+    <string name="sequoia">Sequoia</string>
+    <string name="cruz">Cruz</string>
+    <string name="mission">Mission</string>
+    <string name="delirium">Delirium</string>
+    <string name="custom">Custom</string>
+    <string name="redwood">Redwood</string>
+    <string name="pacific">Pacific</string>
+    <string name="skyline">Skyline</string>
+
+    <string name="speed">Speed</string>
+    <string name="motor_rpm">Motor RPM</string>
+    <string name="speed_record">Speed Record</string>
+    <string name="trip_distance">Trip Distance</string>
+    <string name="record_trip_distance">Record Trip Distance</string>
+    <string name="total_distance">Total Distance</string>
+    <string name="battery_percentage">Battery Percentage</string>
+    <string name="battery_voltage">Battery Voltage</string>
+    <string name="battery_amps">Battery Amps</string>
+    <string name="pitch">Pitch</string>
+    <string name="roll">Roll</string>
+    <string name="footpads">Footpads</string>
+    <string name="watt_usage">Watt Usage</string>
+    <string name="amps_used">Amps Used</string>
+    <string name="amps_generated">Amps Generated</string>
+    <string name="cell_voltages">Cell Voltages</string>
+    <string name="controller_temperature">Controller Temperature</string>
+    <string name="motor_temperature">Motor Temperature</string>
+    <string name="battery_temperature">Battery Temperature</string>
+    <string name="hardware_revision">Hardware Revision</string>
+    <string name="software_revision">Software Revision</string>
+    <string name="refresh">Refresh</string>
+
+    <string name="mph">mph</string>
+    <string name="edit_custom_ridemode">Edit Custom Ridemode</string>
+    <string name="scanning">Scanning…</string>
+    <string name="cancel">Cancel</string>
+    <string name="scan">Scan</string>
+
+    <string name="settings">Settings</string>
+
+    <string name="text_color">Text Color:</string>
+    <string name="black">Black</string>
+    <string name="background_color">Background Color:</string>
+    <string name="white">White</string>
+</resources>

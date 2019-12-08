@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="appwidget_text">EXAMPLE</string>
+    <string name="configure">Configure</string>
+    <string name="add_widget">Add widget</string>
+
+    <string name="logging_disabled">Trip Logging Disabled. Enable in Settings.</string>
+    <string name="elapsed_time">Elapsed Time (Min)</string>
+    <string name="battery_percent">Battery (%)</string>
+    <string name="distance_km">Distance (Km)</string>
+
+    <string name="log_trips">Log Trips</string>
+    <string name="mi">mi</string>
+    <string name="mph">mph</string>
+    <string name="volts">volts</string>
+</resources>

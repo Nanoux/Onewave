@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content">
+    <!-- <EditTextPreference android:title="Your Name"
+                        android:key="username"
+                        android:summary="Please provide your username"></EditTextPreference> -->
+
+    <PreferenceCategory android:title="App Updates">
+
+        <Preference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="buttonUpdate"
+            android:title="Up to Date! ✔"
+            android:summary="Click to view Github Repo"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="App Settings">
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="3"
+            android:entries="@array/AppTheme"
+            android:entryValues="@array/AppThemeValue"
+            android:key="appTheme"
+            android:title="App Theme" />
+        <Preference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="buttonDisconnect"
+            android:title="Disconnect"/>
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="metricUnits"
+            android:title="Use Metric Units" />
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="notificationSpeed"
+            android:title="Record Speed Notification" />
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="notificationSensor"
+            android:title="Inactive Sensor Notification" />
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="updateData"
+            android:title="Check for updates over data"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Warning Settings">
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="warningCharge"
+            android:title="Charge Warning" />
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/ChargeWarn"
+            android:entryValues="@array/ChargeWarnValue"
+            android:defaultValue="100%"
+            android:summary="%s"
+            android:layout="@layout/custom_list"
+            android:positiveButtonText="%s"
+            android:dependency="warningCharge"
+            android:key="warningChargeValue"
+            android:title="Threshold" />
+
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="warningTurn"
+            android:title="Turnaround Warning" />
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/TurnWarn"
+            android:entryValues="@array/TurnWarnValue"
+            android:defaultValue="50%"
+            android:summary="%s"
+            android:layout="@layout/custom_list"
+            android:positiveButtonText="%s"
+            android:dependency="warningTurn"
+            android:key="warningTurnThresh"
+            android:title="Threshold" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="warningBatt1"
+            android:title="Battery Warning 1" />
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/BattWarn1"
+            android:entryValues="@array/BattWarnValue1"
+            android:defaultValue="10%"
+            android:summary="%s"
+            android:layout="@layout/custom_list"
+            android:positiveButtonText="%s"
+            android:dependency="warningBatt1"
+            android:key="warningBattThresh1"
+            android:title="Threshold" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="warningBatt2"
+            android:title="Battery Warning 2" />
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/BattWarn2"
+            android:entryValues="@array/BattWarnValue2"
+            android:defaultValue="5%"
+            android:summary="%s"
+            android:layout="@layout/custom_list"
+            android:positiveButtonText="%s"
+            android:dependency="warningBatt2"
+            android:key="warningBattThresh2"
+            android:title="Threshold" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="warningSpeed"
+            android:title="Speed Warning" />
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/SpeedWarn"
+            android:entryValues="@array/SpeedWarnValue"
+            android:defaultValue="413"
+            android:summary="%s"
+            android:layout="@layout/custom_list"
+            android:positiveButtonText="%s"
+            android:dependency="warningSpeed"
+            android:key="warningSpeedThresh"
+            android:title="Threshold" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="false"
+            android:key="warningSpeed2"
+            android:title="Speed Warning 2" />
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/SpeedWarn2"
+            android:entryValues="@array/SpeedWarnValue2"
+            android:defaultValue="488"
+            android:summary="%s"
+            android:layout="@layout/custom_list"
+            android:positiveButtonText="%s"
+            android:dependency="warningSpeed2"
+            android:key="warningSpeedThresh2"
+            android:title="Threshold" />
+
+        <SwitchPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:defaultValue="true"
+            android:key="warningRegen"
+            android:title="Regen Warning" />
+
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/RegenWarn"
+            android:entryValues="@array/RegenWarnValue"
+            android:defaultValue="99%"
+            android:summary="%s"
+            android:layout="@layout/custom_list"
+            android:positiveButtonText="%s"
+            android:dependency="warningRegen"
+            android:key="warningRegenThresh"
+            android:title="Threshold" />
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Meta Links">
+        <!--
+                <Preference
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:key="buttonRate"
+                    android:title="Rate App"/>-->
+        <Preference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="buttonEmail"
+            android:title="Send Bug Report/Feedback"/>
+
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Miscellaneous">
+        <ListPreference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:entries="@array/MethodBattery"
+            android:entryValues="@array/MethodBatteryValue"
+            android:defaultValue="batteryDefault"
+            android:summary="For Onewheels with modified batteries, non-default options are guesses and may fluctuate or be inaccurate."
+            android:positiveButtonText="%s"
+            android:key="batteryMethod"
+            android:title="Battery % Guestimation" />
+    </PreferenceCategory>
+
+    <PreferenceCategory android:title="Open Source Attributes">
+
+        <Preference
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:key="buttonpOne"
+            android:title="pOnewheel - kwatts"
+            android:summary="Used in assembling the Bluetooth stack. Special thanks to everyone in the issue_86 thread for helping me support Gemini firmware."/>
+
+    </PreferenceCategory>
+
+
+</PreferenceScreen>
